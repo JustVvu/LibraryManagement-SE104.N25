@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookMangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookMangeForm.Designer.cs">
+      <DependentUpon>BookMangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FindBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindBookForm.Designer.cs">
+      <DependentUpon>FindBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindReaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindReaderForm.Designer.cs">
+      <DependentUpon>FindReaderForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BookMangeForm.resx">
+      <DependentUpon>BookMangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +96,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FindBookForm.resx">
+      <DependentUpon>FindBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindReaderForm.resx">
+      <DependentUpon>FindReaderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
