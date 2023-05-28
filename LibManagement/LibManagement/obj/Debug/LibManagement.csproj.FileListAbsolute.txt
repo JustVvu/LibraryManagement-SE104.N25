@@ -9,3 +9,7 @@ C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.exe
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.pdb
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.LoginForm.resources
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.FindBookForm.resources
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.FindReaderForm.resources
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.BookMangeForm.resources
