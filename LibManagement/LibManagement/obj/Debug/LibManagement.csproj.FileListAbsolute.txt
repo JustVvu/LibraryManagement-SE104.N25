@@ -1,15 +1,16 @@
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.AssemblyReference.cache
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.SuggestedBindingRedirects.cache
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Debug\LibManagement.exe.config
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Debug\LibManagement.exe
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Debug\LibManagement.pdb
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.MainForm.resources
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.Properties.Resources.resources
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.GenerateResource.cache
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.exe
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.pdb
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.LoginForm.resources
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.FindBookForm.resources
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.FindReaderForm.resources
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.BookMangeForm.resources
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\bin\Debug\LibManagement.exe.config
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\bin\Debug\LibManagement.exe
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\bin\Debug\LibManagement.pdb
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.AssemblyReference.cache
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.SuggestedBindingRedirects.cache
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.BookManageForm.resources
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.LoginForm.resources
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.MainForm.resources
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.Properties.Resources.resources
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.FindBookForm.resources
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.FindReaderForm.resources
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.ReaderManageForm.resources
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.GenerateResource.cache
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.CoreCompileInputs.cache
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.exe
+D:\Program Files\Git\respo\CNPM\LibManagement\LibManagement\obj\Debug\LibManagement.pdb

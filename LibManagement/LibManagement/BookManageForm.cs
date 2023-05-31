@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace LibManagement
 {
-    public partial class BookMangeForm : Form
+    public partial class BookManageForm : Form
     {
-        public BookMangeForm()
+        public BookManageForm()
         {
             InitializeComponent();
         }
 
-        private void BookMangeForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void BookManageForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             //Go back to Mainform
             MainForm mainForm = new MainForm();
@@ -81,7 +81,7 @@ namespace LibManagement
             }
             return false;
         }
-        private void BookMangeForm_Load(object sender, EventArgs e)
+        private void BookManageForm_Load(object sender, EventArgs e)
         {
             //When the form is loaded, the btnAdd, btnEdit, btnDelete buttons are deactivated
             DeActivate();

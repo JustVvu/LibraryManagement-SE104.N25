@@ -50,7 +50,7 @@ namespace LibManagement
         private void quảnLíKhoSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Open the BookMangeForm
-            BookMangeForm BookManageForm = new BookMangeForm();
+            BookManageForm BookManageForm = new BookManageForm();
             BookManageForm.Show();
             this.Hide();
         }
