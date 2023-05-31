@@ -1,6 +1,6 @@
 ﻿namespace LibManagement
 {
-    partial class BookMangeForm
+    partial class BookManageForm
     {
         /// <summary>
         /// Required designer variable.
@@ -259,7 +259,7 @@
             this.txtQuantity.Size = new System.Drawing.Size(193, 26);
             this.txtQuantity.TabIndex = 21;
             // 
-            // BookMangeForm
+            // BookManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -286,10 +286,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "BookMangeForm";
-            this.Text = "BookMangeForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookMangeForm_FormClosed);
-            this.Load += new System.EventHandler(this.BookMangeForm_Load);
+            this.Name = "BookManageForm";
+            this.Text = "BookManageForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookManageForm_FormClosed);
+            this.Load += new System.EventHandler(this.BookManageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
