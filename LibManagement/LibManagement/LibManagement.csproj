@@ -52,6 +52,10 @@
     <Compile Include="BookManageForm.Designer.cs">
       <DependentUpon>BookManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMuontrasach.Designer.cs" />
+    <Compile Include="FormMuontrasach.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="BookManageForm.resx">
       <DependentUpon>BookManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMuontrasach.resx">
+      <DependentUpon>FormMuontrasach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
