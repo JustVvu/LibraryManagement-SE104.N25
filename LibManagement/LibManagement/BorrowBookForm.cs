@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibManagement
 {
-    public partial class FormMuonTra : Form
+    public partial class BorrowBookForm : Form
     {
-        public FormMuonTra()
+        public BorrowBookForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace LibManagement
 {
-    partial class FormMuonTra
+    partial class BorrowBookForm
     {
         /// <summary>
         /// Required designer variable.
