@@ -36,6 +36,11 @@ namespace LibManagement
 
         private void ReaderManageForm_Load(object sender, EventArgs e)
         {
+            //Load database
+            conn = new SqlConnection(connectionString);
+            conn.Open();
+            loadData();
+
             dtNgayLapThe.Value = DateTime.Today;
             dtNgayHetHan.Value = dtNgayLapThe.Value.AddMonths(6);
             DeActivate();
@@ -62,13 +67,6 @@ namespace LibManagement
         private void Xoa_Click(object sender, EventArgs e)
         {
             //
-            Clear();
-        }
-
-        private void GiaHan_Click(object sender, EventArgs e)
-        {
-            dtNgayHetHan.Value.AddMonths(6);
-            //save
             Clear();
         }
 

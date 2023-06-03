@@ -331,7 +331,6 @@ namespace LibManagement
             this.btnTim.TabIndex = 23;
             this.btnTim.Text = "Tìm kiếm";
             this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.GiaHan_Click);
             // 
             // qUANLYTHUVIENDataSet
             // 
