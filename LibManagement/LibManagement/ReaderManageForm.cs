@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,21 @@ namespace LibManagement
 {
     public partial class ReaderManageForm : Form
     {
+        SqlConnection conn;
+        SqlCommand cmd;
+        string connectionString = "Data Source=VU-NGUYEN;Initial Catalog=QUANLYTHUVIEN;Integrated Security=True";
+        SqlDataAdapter adapter;
+        DataTable dt = new DataTable();
+
+        void loadData()
+        {
+            cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT * FROM DOCGIA";
+            adapter = new SqlDataAdapter(cmd);
+            dt.Clear();
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
         public ReaderManageForm()
         {
             InitializeComponent();
@@ -20,8 +36,8 @@ namespace LibManagement
 
         private void ReaderManageForm_Load(object sender, EventArgs e)
         {
-            NgayLapThe.Value = DateTime.Today;
-            NgayHetHan.Value = NgayLapThe.Value.AddMonths(6);
+            dtNgayLapThe.Value = DateTime.Today;
+            dtNgayHetHan.Value = dtNgayLapThe.Value.AddMonths(6);
             DeActivate();
         }
 
@@ -51,7 +67,7 @@ namespace LibManagement
 
         private void GiaHan_Click(object sender, EventArgs e)
         {
-            NgayHetHan.Value.AddMonths(6);
+            dtNgayHetHan.Value.AddMonths(6);
             //save
             Clear();
         }
@@ -63,37 +79,36 @@ namespace LibManagement
 
         private void DeActivate()
         {
-            Them.Enabled = false;
-            Xoa.Enabled = false;
-            Sua.Enabled = false;
-            GiaHan.Enabled = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
         }
 
         private void ThemCheck()
         {
-            if (!string.IsNullOrWhiteSpace(HoTen.Text) &&
-                GioiTinh.SelectedIndex != -1 &&
-                !string.IsNullOrWhiteSpace(CMND.Text) &&
-                !string.IsNullOrWhiteSpace(SDT.Text))
+            if (!string.IsNullOrWhiteSpace(txtHoTen.Text) &&
+                txtGioiTinh.SelectedIndex != -1 &&
+                !string.IsNullOrWhiteSpace(txtCMND.Text) &&
+                !string.IsNullOrWhiteSpace(txtSDT.Text))
             {
-                Them.Enabled = true;
+                btnThem.Enabled = true;
             }
             else
             {
-                Them.Enabled = false;
+                btnThem.Enabled = false;
             }
         }
 
         private void Clear()
         {
-            MaDocGia.Text = string.Empty;
-            HoTen.Text = string.Empty;
-            GioiTinh.SelectedIndex = -1;
-            CMND.Text = string.Empty;
-            SDT.Text = string.Empty;
-            Email.Text = string.Empty;
-            NgayLapThe.Value = DateTime.Today;
-            NgayHetHan.Value = NgayLapThe.Value.AddMonths(6);
+            txtMaDocGia.Text = string.Empty;
+            txtHoTen.Text = string.Empty;
+            txtGioiTinh.SelectedIndex = -1;
+            txtCMND.Text = string.Empty;
+            txtSDT.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            dtNgayLapThe.Value = DateTime.Today;
+            dtNgayHetHan.Value = dtNgayLapThe.Value.AddMonths(6);
             DeActivate();
         }
 
@@ -113,14 +128,14 @@ namespace LibManagement
 
         private void CMND_TextChanged(object sender, EventArgs e)
         {
-            if (CMND.Text.Length != 12 || CMND.Text.Length != 9 || !string.IsNullOrWhiteSpace(CMND.Text))
+            if (txtCMND.Text.Length != 12 || txtCMND.Text.Length != 9 || !string.IsNullOrWhiteSpace(txtCMND.Text))
             {
                 MessageBox.Show("CMND không hợp lệ.", "Lỗi Nhập Liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                CMND.BackColor = Color.LightPink;
+                txtCMND.BackColor = Color.LightPink;
             }
             else
             {
-                CMND.BackColor = SystemColors.Window;
+                txtCMND.BackColor = SystemColors.Window;
                 ThemCheck();
             }
         }
@@ -137,7 +152,7 @@ namespace LibManagement
 
         private void NgayLapThe_ValueChanged(object sender, EventArgs e)
         {
-            NgayHetHan.Value = NgayLapThe.Value.AddMonths(6);
+            dtNgayHetHan.Value = dtNgayLapThe.Value.AddMonths(6);
         }
 
     }

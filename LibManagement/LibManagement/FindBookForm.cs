@@ -34,5 +34,13 @@ namespace LibManagement
         {
 
         }
+
+        private void FindBookForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Go back to mainform
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -81,7 +81,7 @@
             // 
             // btnFind
             // 
-            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnFind.Location = new System.Drawing.Point(761, 117);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(100, 40);
@@ -91,7 +91,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnExit.Location = new System.Drawing.Point(761, 181);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 40);
@@ -136,6 +136,7 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "FindReaderForm";
             this.Text = "Tra cứu Độc giả";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindReaderForm_FormClosed);
             this.Load += new System.EventHandler(this.TimDocGiaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

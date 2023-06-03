@@ -62,5 +62,13 @@ namespace LibManagement
             BorrowBookForm.Show();
             this.Hide();
         }
+
+        private void quảnLíĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           //Open the ReaderManageForm
+            ReaderManageForm ReaderManageForm = new ReaderManageForm();
+            ReaderManageForm.Show();
+            this.Hide();
+        }
     }
 }

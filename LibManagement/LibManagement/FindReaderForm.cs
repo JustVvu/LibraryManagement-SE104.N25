@@ -22,7 +22,7 @@ namespace LibManagement
         void loadData()
         {
             cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM DocGia";
+            cmd.CommandText = "SELECT * FROM DOCGIA";
             adapter = new SqlDataAdapter(cmd);
             dt.Clear();
             adapter.Fill(dt);
@@ -48,6 +48,14 @@ namespace LibManagement
             conn.Open();
             loadData();
 
+        }
+
+        private void FindReaderForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //go back to mainform
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
         }
     }
 }
