@@ -50,6 +50,8 @@ namespace LibManagement
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.qUANLYTHUVIENDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qUANLYTHUVIENDataSet = new LibManagement.QUANLYTHUVIENDataSet();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,11 +59,9 @@ namespace LibManagement
             this.label10 = new System.Windows.Forms.Label();
             this.lblMoney = new System.Windows.Forms.Label();
             this.btnTim = new System.Windows.Forms.Button();
-            this.qUANLYTHUVIENDataSet = new LibManagement.QUANLYTHUVIENDataSet();
-            this.qUANLYTHUVIENDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -243,9 +243,7 @@ namespace LibManagement
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.qUANLYTHUVIENDataSetBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 391);
             this.dataGridView1.Name = "dataGridView1";
@@ -261,6 +259,16 @@ namespace LibManagement
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1062, 248);
             this.dataGridView1.TabIndex = 18;
+            // 
+            // qUANLYTHUVIENDataSetBindingSource
+            // 
+            this.qUANLYTHUVIENDataSetBindingSource.DataSource = this.qUANLYTHUVIENDataSet;
+            this.qUANLYTHUVIENDataSetBindingSource.Position = 0;
+            // 
+            // qUANLYTHUVIENDataSet
+            // 
+            this.qUANLYTHUVIENDataSet.DataSetName = "QUANLYTHUVIENDataSet";
+            this.qUANLYTHUVIENDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -332,16 +340,6 @@ namespace LibManagement
             this.btnTim.Text = "Tìm kiếm";
             this.btnTim.UseVisualStyleBackColor = true;
             // 
-            // qUANLYTHUVIENDataSet
-            // 
-            this.qUANLYTHUVIENDataSet.DataSetName = "QUANLYTHUVIENDataSet";
-            this.qUANLYTHUVIENDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qUANLYTHUVIENDataSetBindingSource
-            // 
-            this.qUANLYTHUVIENDataSetBindingSource.DataSource = this.qUANLYTHUVIENDataSet;
-            this.qUANLYTHUVIENDataSetBindingSource.Position = 0;
-            // 
             // ReaderManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,8 +375,8 @@ namespace LibManagement
             this.Closed += new System.EventHandler(this.ReaderManageForm_Closed);
             this.Load += new System.EventHandler(this.ReaderManageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
