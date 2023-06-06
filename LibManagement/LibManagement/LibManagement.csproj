@@ -90,6 +90,9 @@
     <Compile Include="FindReaderForm.Designer.cs">
       <DependentUpon>FindReaderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="QUANLYTHUVIENDataSet.cs">
+      <DependentUpon>QUANLYTHUVIENDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QUANLYTHUVIENDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
