@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbxOption = new System.Windows.Forms.ComboBox();
+            this.cmbOption = new System.Windows.Forms.ComboBox();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,21 +39,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookFind)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbxOption
+            // cmbOption
             // 
-            this.cbxOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbxOption.FormattingEnabled = true;
-            this.cbxOption.Items.AddRange(new object[] {
+            this.cmbOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbOption.FormattingEnabled = true;
+            this.cmbOption.Items.AddRange(new object[] {
             "Mã sách",
             "Tên sách",
             "Tác giả",
             "Nhà xuất bản",
             "Thể loại",
-            "Năm phát hành"});
-            this.cbxOption.Location = new System.Drawing.Point(154, 117);
-            this.cbxOption.Name = "cbxOption";
-            this.cbxOption.Size = new System.Drawing.Size(143, 28);
-            this.cbxOption.TabIndex = 0;
+            "Năm xuất bản"});
+            this.cmbOption.Location = new System.Drawing.Point(154, 117);
+            this.cmbOption.Name = "cmbOption";
+            this.cmbOption.Size = new System.Drawing.Size(143, 28);
+            this.cmbOption.TabIndex = 0;
             // 
             // txtFind
             // 
@@ -139,7 +139,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFind);
-            this.Controls.Add(this.cbxOption);
+            this.Controls.Add(this.cmbOption);
             this.Name = "FindBookForm";
             this.Text = "Tra cứu Độc giả";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindBookForm_FormClosed);
@@ -152,7 +152,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbxOption;
+        private System.Windows.Forms.ComboBox cmbOption;
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

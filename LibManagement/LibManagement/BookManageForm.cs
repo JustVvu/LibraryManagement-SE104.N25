@@ -24,7 +24,7 @@ namespace LibManagement
 
         void loadData()
         {
-            //Populate the DataGridView column with the data in the database
+            //Load data in the database
             cmd = conn.CreateCommand();
             cmd.CommandText = "SELECT * FROM SACH";
             adapter = new SqlDataAdapter(cmd);
@@ -75,7 +75,6 @@ namespace LibManagement
             //Go back to Mainform
             MainForm mainForm = new MainForm();
             mainForm.Show();
-            this.Hide();
         }
 
         bool CheckEmpty()
@@ -142,10 +141,9 @@ namespace LibManagement
             conn.Open();
             loadData();
         }
-
-        private void dgvBookManage_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvBookManage_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //When click on a row in datagridview, the data of that row will be loaded to the textboxes
+            //When double click on a row in datagridview, the data of that row will be loaded to the textboxes
             int i;
             i = dgvBookManage.CurrentRow.Index;
             txtBookID.Text = dgvBookManage.Rows[i].Cells[0].Value.ToString();
@@ -204,13 +202,7 @@ namespace LibManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //Check if the book is in the database
-            if (!CheckBookExist())
-            {
-                MessageBox.Show("Sách không có trong kho", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            //If yes, confirm to delete the book first, if yes, delete the book in the database
+            //Confirm to delete the book first, if yes, delete the book in the database
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa sách này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
@@ -229,19 +221,36 @@ namespace LibManagement
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //Check if the book is in the database
-            if (!CheckBookExist())
+            //Edit the book in the database
+            try
             {
-                MessageBox.Show("Sách không có trong kho", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            //If yes, edit the book in the database
-            cmd = conn.CreateCommand();
-            cmd.CommandText = "UPDATE SACH SET TenSach = N'" + txtBookName.Text + "', TacGia = N'" + txtAuthor.Text + "', NamXB = '" + dtpYear.Text + "', NhaXB = N'" + txtPublisher.Text + "', NgonNgu = N'" + txtLanguage.Text + "', SoLuong = '" + txtQuantity.Text + "', TriGia = '" + txtValue.Text + "', TheLoai = N'" + txtGenre.Text + "' WHERE MaSach = '" + txtBookID.Text + "'";
-            cmd.ExecuteNonQuery();
-            loadData();
-        }
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "UPDATE SACH SET TenSach = @TenSach, TacGia = @TacGia, NamXuatBan = @NamXuatBan, NhaXuatBan = @NhaXuatBan, NgonNgu = @NgonNgu, SoLuong = @SoLuong, TriGia = @TriGia, TheLoai = @TheLoai WHERE MaSach = @MaSach";
 
+                cmd.Parameters.AddWithValue("@TenSach", txtBookName.Text);
+                cmd.Parameters.AddWithValue("@TacGia", txtAuthor.Text);
+                cmd.Parameters.AddWithValue("@NamXuatBan", dtpYear.Text);
+                cmd.Parameters.AddWithValue("@NhaXuatBan", txtPublisher.Text);
+                cmd.Parameters.AddWithValue("@NgonNgu", txtLanguage.Text);
+                cmd.Parameters.AddWithValue("@SoLuong", txtQuantity.Text);
+                cmd.Parameters.AddWithValue("@TriGia", txtValue.Text);
+                cmd.Parameters.AddWithValue("@TheLoai", txtGenre.Text);
+                cmd.Parameters.AddWithValue("@MaSach", txtBookID.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Sửa sách thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearTextBox();
+                loadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sửa sách không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Show error
+                MessageBox.Show(ex.Message);
+                loadData();
+            }
+
+        }
         private void btnClr_Click(object sender, EventArgs e)
         {
             ClearTextBox();

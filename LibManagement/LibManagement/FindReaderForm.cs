@@ -26,7 +26,7 @@ namespace LibManagement
             adapter = new SqlDataAdapter(cmd);
             dt.Clear();
             adapter.Fill(dt);
-            dataGridView1.DataSource = dt;
+            dgvFindReader.DataSource = dt;
         }
 
         public FindReaderForm()
@@ -36,10 +36,10 @@ namespace LibManagement
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            //Exit this form and open the main form
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Hide();
+            //Exit and go back to ReaderManageForm
+            ReaderManageForm readerManageForm = new ReaderManageForm();
+            readerManageForm.Show();
+
         }
 
         private void TimDocGiaForm_Load(object sender, EventArgs e)
@@ -55,6 +55,22 @@ namespace LibManagement
             //go back to mainform
             MainForm mainForm = new MainForm();
             mainForm.Show();
+            this.Hide();
+        }
+
+        private void dgvFindReader_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Get the value from the selected row in the datagridview and pass it to the BookManageForm
+            int i;
+            i = dgvFindReader.CurrentRow.Index;
+            DataGridViewRow row = dgvFindReader.Rows[i];
+            //pass the value to the BookManageForm with the second constructor
+            ReaderManageForm readerManageForm = new ReaderManageForm(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), 
+                                                                    row.Cells[2].Value.ToString(), DateTime.Parse(row.Cells[3].Value.ToString()), 
+                                                                    row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString(), row.Cells[6].Value.ToString(), 
+                                                                    DateTime.Parse(row.Cells[7].Value.ToString()), DateTime.Parse(row.Cells[8].Value.ToString()), 
+                                                                    Convert.ToInt32(row.Cells[9].Value.ToString()));
+            readerManageForm.Show();
             this.Hide();
         }
     }
