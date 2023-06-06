@@ -1414,7 +1414,6 @@ namespace LibManagement {
                 this.columnMaSach.AutoIncrementSeed = -1;
                 this.columnMaSach.AutoIncrementStep = -1;
                 this.columnMaSach.AllowDBNull = false;
-                this.columnMaSach.ReadOnly = true;
                 this.columnMaSach.Unique = true;
                 this.columnTenSach.AllowDBNull = false;
                 this.columnTenSach.MaxLength = 50;
@@ -3992,8 +3991,7 @@ SELECT MaSach, TenSach, TacGia, NamXB, NhaXB, NgonNgu, SoLuong, TriGia FROM SACH
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MaSach, TenSach, TacGia, NamXB, NhaXB, NgonNgu, SoLuong, TriGia FROM dbo.S" +
-                "ACH";
+            this._commandCollection[0].CommandText = "SELECT MaSach, TenSach, TacGia, NamXB, NhaXB, NgonNgu, SoLuong, TriGia FROM SACH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

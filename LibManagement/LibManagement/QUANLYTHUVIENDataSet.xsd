@@ -202,7 +202,7 @@ SELECT MaSach, TenSach, TacGia, NamXB, NhaXB, NgonNgu, SoLuong, TriGia FROM SACH
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MaSach, TenSach, TacGia, NamXB, NhaXB, NgonNgu, SoLuong, TriGia FROM dbo.SACH</CommandText>
+                    <CommandText>SELECT MaSach, TenSach, TacGia, NamXB, NhaXB, NgonNgu, SoLuong, TriGia FROM SACH</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -361,121 +361,121 @@ SELECT MaMuonSach, NgayTra, TienPhat FROM TRASACH WHERE (MaMuonSach = @MaMuonSac
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="QUANLYTHUVIENDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="QUANLYTHUVIENDataSet" msprop:Generator_DataSetName="QUANLYTHUVIENDataSet">
+  <xs:element name="QUANLYTHUVIENDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="QUANLYTHUVIENDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QUANLYTHUVIENDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DOCGIA" msprop:Generator_RowEvHandlerName="DOCGIARowChangeEventHandler" msprop:Generator_RowDeletedName="DOCGIARowDeleted" msprop:Generator_RowDeletingName="DOCGIARowDeleting" msprop:Generator_RowEvArgName="DOCGIARowChangeEvent" msprop:Generator_TablePropName="DOCGIA" msprop:Generator_RowChangedName="DOCGIARowChanged" msprop:Generator_RowChangingName="DOCGIARowChanging" msprop:Generator_TableClassName="DOCGIADataTable" msprop:Generator_RowClassName="DOCGIARow" msprop:Generator_TableVarName="tableDOCGIA" msprop:Generator_UserTableName="DOCGIA">
+        <xs:element name="DOCGIA" msprop:Generator_RowEvHandlerName="DOCGIARowChangeEventHandler" msprop:Generator_RowDeletedName="DOCGIARowDeleted" msprop:Generator_RowDeletingName="DOCGIARowDeleting" msprop:Generator_RowEvArgName="DOCGIARowChangeEvent" msprop:Generator_TablePropName="DOCGIA" msprop:Generator_RowChangedName="DOCGIARowChanged" msprop:Generator_UserTableName="DOCGIA" msprop:Generator_RowChangingName="DOCGIARowChanging" msprop:Generator_RowClassName="DOCGIARow" msprop:Generator_TableClassName="DOCGIADataTable" msprop:Generator_TableVarName="tableDOCGIA">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaDocGia" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="MaDocGia" msprop:Generator_ColumnPropNameInTable="MaDocGiaColumn" msprop:Generator_ColumnVarNameInTable="columnMaDocGia" msprop:Generator_UserColumnName="MaDocGia" type="xs:int" />
-              <xs:element name="HoTen" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_ColumnVarNameInTable="columnHoTen" msprop:Generator_UserColumnName="HoTen">
+              <xs:element name="MaDocGia" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="MaDocGiaColumn" msprop:Generator_ColumnPropNameInRow="MaDocGia" msprop:Generator_UserColumnName="MaDocGia" msprop:Generator_ColumnVarNameInTable="columnMaDocGia" type="xs:int" />
+              <xs:element name="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_UserColumnName="HoTen" msprop:Generator_ColumnVarNameInTable="columnHoTen">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="GioiTinh" msprop:Generator_ColumnPropNameInRow="GioiTinh" msprop:Generator_ColumnPropNameInTable="GioiTinhColumn" msprop:Generator_ColumnVarNameInTable="columnGioiTinh" msprop:Generator_UserColumnName="GioiTinh">
+              <xs:element name="GioiTinh" msprop:Generator_ColumnPropNameInTable="GioiTinhColumn" msprop:Generator_ColumnPropNameInRow="GioiTinh" msprop:Generator_UserColumnName="GioiTinh" msprop:Generator_ColumnVarNameInTable="columnGioiTinh">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NgaySinh" msprop:Generator_ColumnPropNameInRow="NgaySinh" msprop:Generator_ColumnPropNameInTable="NgaySinhColumn" msprop:Generator_ColumnVarNameInTable="columnNgaySinh" msprop:Generator_UserColumnName="NgaySinh" type="xs:dateTime" />
-              <xs:element name="CMND" msprop:Generator_ColumnPropNameInRow="CMND" msprop:Generator_ColumnPropNameInTable="CMNDColumn" msprop:Generator_ColumnVarNameInTable="columnCMND" msprop:Generator_UserColumnName="CMND">
+              <xs:element name="NgaySinh" msprop:Generator_ColumnPropNameInTable="NgaySinhColumn" msprop:Generator_ColumnPropNameInRow="NgaySinh" msprop:Generator_UserColumnName="NgaySinh" msprop:Generator_ColumnVarNameInTable="columnNgaySinh" type="xs:dateTime" />
+              <xs:element name="CMND" msprop:Generator_ColumnPropNameInTable="CMNDColumn" msprop:Generator_ColumnPropNameInRow="CMND" msprop:Generator_UserColumnName="CMND" msprop:Generator_ColumnVarNameInTable="columnCMND">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="12" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SDT" msprop:Generator_ColumnPropNameInRow="SDT" msprop:Generator_ColumnPropNameInTable="SDTColumn" msprop:Generator_ColumnVarNameInTable="columnSDT" msprop:Generator_UserColumnName="SDT">
+              <xs:element name="SDT" msprop:Generator_ColumnPropNameInTable="SDTColumn" msprop:Generator_ColumnPropNameInRow="SDT" msprop:Generator_UserColumnName="SDT" msprop:Generator_ColumnVarNameInTable="columnSDT">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="12" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NgayLapThe" msprop:Generator_ColumnPropNameInRow="NgayLapThe" msprop:Generator_ColumnPropNameInTable="NgayLapTheColumn" msprop:Generator_ColumnVarNameInTable="columnNgayLapThe" msprop:Generator_UserColumnName="NgayLapThe" type="xs:dateTime" />
-              <xs:element name="NgayHetHan" msprop:Generator_ColumnPropNameInRow="NgayHetHan" msprop:Generator_ColumnPropNameInTable="NgayHetHanColumn" msprop:Generator_ColumnVarNameInTable="columnNgayHetHan" msprop:Generator_UserColumnName="NgayHetHan" type="xs:dateTime" />
-              <xs:element name="TongPhat" msprop:Generator_ColumnPropNameInRow="TongPhat" msprop:Generator_ColumnPropNameInTable="TongPhatColumn" msprop:Generator_ColumnVarNameInTable="columnTongPhat" msprop:Generator_UserColumnName="TongPhat" type="xs:decimal" />
-              <xs:element name="TienNo" msprop:Generator_ColumnPropNameInRow="TienNo" msprop:Generator_ColumnPropNameInTable="TienNoColumn" msprop:Generator_ColumnVarNameInTable="columnTienNo" msprop:Generator_UserColumnName="TienNo" type="xs:decimal" />
+              <xs:element name="NgayLapThe" msprop:Generator_ColumnPropNameInTable="NgayLapTheColumn" msprop:Generator_ColumnPropNameInRow="NgayLapThe" msprop:Generator_UserColumnName="NgayLapThe" msprop:Generator_ColumnVarNameInTable="columnNgayLapThe" type="xs:dateTime" />
+              <xs:element name="NgayHetHan" msprop:Generator_ColumnPropNameInTable="NgayHetHanColumn" msprop:Generator_ColumnPropNameInRow="NgayHetHan" msprop:Generator_UserColumnName="NgayHetHan" msprop:Generator_ColumnVarNameInTable="columnNgayHetHan" type="xs:dateTime" />
+              <xs:element name="TongPhat" msprop:Generator_ColumnPropNameInTable="TongPhatColumn" msprop:Generator_ColumnPropNameInRow="TongPhat" msprop:Generator_UserColumnName="TongPhat" msprop:Generator_ColumnVarNameInTable="columnTongPhat" type="xs:decimal" />
+              <xs:element name="TienNo" msprop:Generator_ColumnPropNameInTable="TienNoColumn" msprop:Generator_ColumnPropNameInRow="TienNo" msprop:Generator_UserColumnName="TienNo" msprop:Generator_ColumnVarNameInTable="columnTienNo" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MUONSACH" msprop:Generator_RowEvHandlerName="MUONSACHRowChangeEventHandler" msprop:Generator_RowDeletedName="MUONSACHRowDeleted" msprop:Generator_RowDeletingName="MUONSACHRowDeleting" msprop:Generator_RowEvArgName="MUONSACHRowChangeEvent" msprop:Generator_TablePropName="MUONSACH" msprop:Generator_RowChangedName="MUONSACHRowChanged" msprop:Generator_RowChangingName="MUONSACHRowChanging" msprop:Generator_TableClassName="MUONSACHDataTable" msprop:Generator_RowClassName="MUONSACHRow" msprop:Generator_TableVarName="tableMUONSACH" msprop:Generator_UserTableName="MUONSACH">
+        <xs:element name="MUONSACH" msprop:Generator_RowEvHandlerName="MUONSACHRowChangeEventHandler" msprop:Generator_RowDeletedName="MUONSACHRowDeleted" msprop:Generator_RowDeletingName="MUONSACHRowDeleting" msprop:Generator_RowEvArgName="MUONSACHRowChangeEvent" msprop:Generator_TablePropName="MUONSACH" msprop:Generator_RowChangedName="MUONSACHRowChanged" msprop:Generator_UserTableName="MUONSACH" msprop:Generator_RowChangingName="MUONSACHRowChanging" msprop:Generator_RowClassName="MUONSACHRow" msprop:Generator_TableClassName="MUONSACHDataTable" msprop:Generator_TableVarName="tableMUONSACH">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaMuonSach" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="MaMuonSach" msprop:Generator_ColumnPropNameInTable="MaMuonSachColumn" msprop:Generator_ColumnVarNameInTable="columnMaMuonSach" msprop:Generator_UserColumnName="MaMuonSach" type="xs:int" />
-              <xs:element name="MaDocGia" msprop:Generator_ColumnPropNameInRow="MaDocGia" msprop:Generator_ColumnPropNameInTable="MaDocGiaColumn" msprop:Generator_ColumnVarNameInTable="columnMaDocGia" msprop:Generator_UserColumnName="MaDocGia" type="xs:int" minOccurs="0" />
-              <xs:element name="MaSach" msprop:Generator_ColumnPropNameInRow="MaSach" msprop:Generator_ColumnPropNameInTable="MaSachColumn" msprop:Generator_ColumnVarNameInTable="columnMaSach" msprop:Generator_UserColumnName="MaSach" type="xs:int" minOccurs="0" />
-              <xs:element name="NgayMuon" msprop:Generator_ColumnPropNameInRow="NgayMuon" msprop:Generator_ColumnPropNameInTable="NgayMuonColumn" msprop:Generator_ColumnVarNameInTable="columnNgayMuon" msprop:Generator_UserColumnName="NgayMuon" type="xs:dateTime" />
-              <xs:element name="HanTra" msprop:Generator_ColumnPropNameInRow="HanTra" msprop:Generator_ColumnPropNameInTable="HanTraColumn" msprop:Generator_ColumnVarNameInTable="columnHanTra" msprop:Generator_UserColumnName="HanTra" type="xs:dateTime" />
+              <xs:element name="MaMuonSach" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="MaMuonSachColumn" msprop:Generator_ColumnPropNameInRow="MaMuonSach" msprop:Generator_UserColumnName="MaMuonSach" msprop:Generator_ColumnVarNameInTable="columnMaMuonSach" type="xs:int" />
+              <xs:element name="MaDocGia" msprop:Generator_ColumnPropNameInTable="MaDocGiaColumn" msprop:Generator_ColumnPropNameInRow="MaDocGia" msprop:Generator_UserColumnName="MaDocGia" msprop:Generator_ColumnVarNameInTable="columnMaDocGia" type="xs:int" minOccurs="0" />
+              <xs:element name="MaSach" msprop:Generator_ColumnPropNameInTable="MaSachColumn" msprop:Generator_ColumnPropNameInRow="MaSach" msprop:Generator_UserColumnName="MaSach" msprop:Generator_ColumnVarNameInTable="columnMaSach" type="xs:int" minOccurs="0" />
+              <xs:element name="NgayMuon" msprop:Generator_ColumnPropNameInTable="NgayMuonColumn" msprop:Generator_ColumnPropNameInRow="NgayMuon" msprop:Generator_UserColumnName="NgayMuon" msprop:Generator_ColumnVarNameInTable="columnNgayMuon" type="xs:dateTime" />
+              <xs:element name="HanTra" msprop:Generator_ColumnPropNameInTable="HanTraColumn" msprop:Generator_ColumnPropNameInRow="HanTra" msprop:Generator_UserColumnName="HanTra" msprop:Generator_ColumnVarNameInTable="columnHanTra" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SACH" msprop:Generator_RowEvHandlerName="SACHRowChangeEventHandler" msprop:Generator_RowDeletedName="SACHRowDeleted" msprop:Generator_RowDeletingName="SACHRowDeleting" msprop:Generator_RowEvArgName="SACHRowChangeEvent" msprop:Generator_TablePropName="SACH" msprop:Generator_RowChangedName="SACHRowChanged" msprop:Generator_RowChangingName="SACHRowChanging" msprop:Generator_TableClassName="SACHDataTable" msprop:Generator_RowClassName="SACHRow" msprop:Generator_TableVarName="tableSACH" msprop:Generator_UserTableName="SACH">
+        <xs:element name="SACH" msprop:Generator_RowEvHandlerName="SACHRowChangeEventHandler" msprop:Generator_RowDeletedName="SACHRowDeleted" msprop:Generator_RowDeletingName="SACHRowDeleting" msprop:Generator_RowEvArgName="SACHRowChangeEvent" msprop:Generator_TablePropName="SACH" msprop:Generator_RowChangedName="SACHRowChanged" msprop:Generator_UserTableName="SACH" msprop:Generator_RowChangingName="SACHRowChanging" msprop:Generator_RowClassName="SACHRow" msprop:Generator_TableClassName="SACHDataTable" msprop:Generator_TableVarName="tableSACH">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaSach" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="MaSach" msprop:Generator_ColumnPropNameInTable="MaSachColumn" msprop:Generator_ColumnVarNameInTable="columnMaSach" msprop:Generator_UserColumnName="MaSach" type="xs:int" />
-              <xs:element name="TenSach" msprop:Generator_ColumnPropNameInRow="TenSach" msprop:Generator_ColumnPropNameInTable="TenSachColumn" msprop:Generator_ColumnVarNameInTable="columnTenSach" msprop:Generator_UserColumnName="TenSach">
+              <xs:element name="MaSach" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="MaSachColumn" msprop:Generator_ColumnPropNameInRow="MaSach" msprop:Generator_UserColumnName="MaSach" msprop:Generator_ColumnVarNameInTable="columnMaSach" type="xs:int" />
+              <xs:element name="TenSach" msprop:Generator_ColumnPropNameInTable="TenSachColumn" msprop:Generator_ColumnPropNameInRow="TenSach" msprop:Generator_UserColumnName="TenSach" msprop:Generator_ColumnVarNameInTable="columnTenSach">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TacGia" msprop:Generator_ColumnPropNameInRow="TacGia" msprop:Generator_ColumnPropNameInTable="TacGiaColumn" msprop:Generator_ColumnVarNameInTable="columnTacGia" msprop:Generator_UserColumnName="TacGia">
+              <xs:element name="TacGia" msprop:Generator_ColumnPropNameInTable="TacGiaColumn" msprop:Generator_ColumnPropNameInRow="TacGia" msprop:Generator_UserColumnName="TacGia" msprop:Generator_ColumnVarNameInTable="columnTacGia">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NamXB" msprop:Generator_ColumnPropNameInRow="NamXB" msprop:Generator_ColumnPropNameInTable="NamXBColumn" msprop:Generator_ColumnVarNameInTable="columnNamXB" msprop:Generator_UserColumnName="NamXB" type="xs:int" />
-              <xs:element name="NhaXB" msprop:Generator_ColumnPropNameInRow="NhaXB" msprop:Generator_ColumnPropNameInTable="NhaXBColumn" msprop:Generator_ColumnVarNameInTable="columnNhaXB" msprop:Generator_UserColumnName="NhaXB">
+              <xs:element name="NamXB" msprop:Generator_ColumnPropNameInTable="NamXBColumn" msprop:Generator_ColumnPropNameInRow="NamXB" msprop:Generator_UserColumnName="NamXB" msprop:Generator_ColumnVarNameInTable="columnNamXB" type="xs:int" />
+              <xs:element name="NhaXB" msprop:Generator_ColumnPropNameInTable="NhaXBColumn" msprop:Generator_ColumnPropNameInRow="NhaXB" msprop:Generator_UserColumnName="NhaXB" msprop:Generator_ColumnVarNameInTable="columnNhaXB">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NgonNgu" msprop:Generator_ColumnPropNameInRow="NgonNgu" msprop:Generator_ColumnPropNameInTable="NgonNguColumn" msprop:Generator_ColumnVarNameInTable="columnNgonNgu" msprop:Generator_UserColumnName="NgonNgu">
+              <xs:element name="NgonNgu" msprop:Generator_ColumnPropNameInTable="NgonNguColumn" msprop:Generator_ColumnPropNameInRow="NgonNgu" msprop:Generator_UserColumnName="NgonNgu" msprop:Generator_ColumnVarNameInTable="columnNgonNgu">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_UserColumnName="SoLuong" type="xs:int" />
-              <xs:element name="TriGia" msprop:Generator_ColumnPropNameInRow="TriGia" msprop:Generator_ColumnPropNameInTable="TriGiaColumn" msprop:Generator_ColumnVarNameInTable="columnTriGia" msprop:Generator_UserColumnName="TriGia" type="xs:decimal" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_UserColumnName="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" type="xs:int" />
+              <xs:element name="TriGia" msprop:Generator_ColumnPropNameInTable="TriGiaColumn" msprop:Generator_ColumnPropNameInRow="TriGia" msprop:Generator_UserColumnName="TriGia" msprop:Generator_ColumnVarNameInTable="columnTriGia" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="THUTIEN" msprop:Generator_RowEvHandlerName="THUTIENRowChangeEventHandler" msprop:Generator_RowDeletedName="THUTIENRowDeleted" msprop:Generator_RowDeletingName="THUTIENRowDeleting" msprop:Generator_RowEvArgName="THUTIENRowChangeEvent" msprop:Generator_TablePropName="THUTIEN" msprop:Generator_RowChangedName="THUTIENRowChanged" msprop:Generator_RowChangingName="THUTIENRowChanging" msprop:Generator_TableClassName="THUTIENDataTable" msprop:Generator_RowClassName="THUTIENRow" msprop:Generator_TableVarName="tableTHUTIEN" msprop:Generator_UserTableName="THUTIEN">
+        <xs:element name="THUTIEN" msprop:Generator_RowEvHandlerName="THUTIENRowChangeEventHandler" msprop:Generator_RowDeletedName="THUTIENRowDeleted" msprop:Generator_RowDeletingName="THUTIENRowDeleting" msprop:Generator_RowEvArgName="THUTIENRowChangeEvent" msprop:Generator_TablePropName="THUTIEN" msprop:Generator_RowChangedName="THUTIENRowChanged" msprop:Generator_UserTableName="THUTIEN" msprop:Generator_RowChangingName="THUTIENRowChanging" msprop:Generator_RowClassName="THUTIENRow" msprop:Generator_TableClassName="THUTIENDataTable" msprop:Generator_TableVarName="tableTHUTIEN">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaThuTien" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="MaThuTien" msprop:Generator_ColumnPropNameInTable="MaThuTienColumn" msprop:Generator_ColumnVarNameInTable="columnMaThuTien" msprop:Generator_UserColumnName="MaThuTien" type="xs:int" />
-              <xs:element name="MaDocGia" msprop:Generator_ColumnPropNameInRow="MaDocGia" msprop:Generator_ColumnPropNameInTable="MaDocGiaColumn" msprop:Generator_ColumnVarNameInTable="columnMaDocGia" msprop:Generator_UserColumnName="MaDocGia" type="xs:int" minOccurs="0" />
-              <xs:element name="NgayThu" msprop:Generator_ColumnPropNameInRow="NgayThu" msprop:Generator_ColumnPropNameInTable="NgayThuColumn" msprop:Generator_ColumnVarNameInTable="columnNgayThu" msprop:Generator_UserColumnName="NgayThu" type="xs:dateTime" />
-              <xs:element name="TienThu" msprop:Generator_ColumnPropNameInRow="TienThu" msprop:Generator_ColumnPropNameInTable="TienThuColumn" msprop:Generator_ColumnVarNameInTable="columnTienThu" msprop:Generator_UserColumnName="TienThu" type="xs:decimal" />
+              <xs:element name="MaThuTien" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="MaThuTienColumn" msprop:Generator_ColumnPropNameInRow="MaThuTien" msprop:Generator_UserColumnName="MaThuTien" msprop:Generator_ColumnVarNameInTable="columnMaThuTien" type="xs:int" />
+              <xs:element name="MaDocGia" msprop:Generator_ColumnPropNameInTable="MaDocGiaColumn" msprop:Generator_ColumnPropNameInRow="MaDocGia" msprop:Generator_UserColumnName="MaDocGia" msprop:Generator_ColumnVarNameInTable="columnMaDocGia" type="xs:int" minOccurs="0" />
+              <xs:element name="NgayThu" msprop:Generator_ColumnPropNameInTable="NgayThuColumn" msprop:Generator_ColumnPropNameInRow="NgayThu" msprop:Generator_UserColumnName="NgayThu" msprop:Generator_ColumnVarNameInTable="columnNgayThu" type="xs:dateTime" />
+              <xs:element name="TienThu" msprop:Generator_ColumnPropNameInTable="TienThuColumn" msprop:Generator_ColumnPropNameInRow="TienThu" msprop:Generator_UserColumnName="TienThu" msprop:Generator_ColumnVarNameInTable="columnTienThu" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TRASACH" msprop:Generator_RowEvHandlerName="TRASACHRowChangeEventHandler" msprop:Generator_RowDeletedName="TRASACHRowDeleted" msprop:Generator_RowDeletingName="TRASACHRowDeleting" msprop:Generator_RowEvArgName="TRASACHRowChangeEvent" msprop:Generator_TablePropName="TRASACH" msprop:Generator_RowChangedName="TRASACHRowChanged" msprop:Generator_RowChangingName="TRASACHRowChanging" msprop:Generator_TableClassName="TRASACHDataTable" msprop:Generator_RowClassName="TRASACHRow" msprop:Generator_TableVarName="tableTRASACH" msprop:Generator_UserTableName="TRASACH">
+        <xs:element name="TRASACH" msprop:Generator_RowEvHandlerName="TRASACHRowChangeEventHandler" msprop:Generator_RowDeletedName="TRASACHRowDeleted" msprop:Generator_RowDeletingName="TRASACHRowDeleting" msprop:Generator_RowEvArgName="TRASACHRowChangeEvent" msprop:Generator_TablePropName="TRASACH" msprop:Generator_RowChangedName="TRASACHRowChanged" msprop:Generator_UserTableName="TRASACH" msprop:Generator_RowChangingName="TRASACHRowChanging" msprop:Generator_RowClassName="TRASACHRow" msprop:Generator_TableClassName="TRASACHDataTable" msprop:Generator_TableVarName="tableTRASACH">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaMuonSach" msprop:Generator_ColumnPropNameInRow="MaMuonSach" msprop:Generator_ColumnPropNameInTable="MaMuonSachColumn" msprop:Generator_ColumnVarNameInTable="columnMaMuonSach" msprop:Generator_UserColumnName="MaMuonSach" type="xs:int" />
-              <xs:element name="NgayTra" msprop:Generator_ColumnPropNameInRow="NgayTra" msprop:Generator_ColumnPropNameInTable="NgayTraColumn" msprop:Generator_ColumnVarNameInTable="columnNgayTra" msprop:Generator_UserColumnName="NgayTra" type="xs:dateTime" />
-              <xs:element name="TienPhat" msprop:Generator_ColumnPropNameInRow="TienPhat" msprop:Generator_ColumnPropNameInTable="TienPhatColumn" msprop:Generator_ColumnVarNameInTable="columnTienPhat" msprop:Generator_UserColumnName="TienPhat" type="xs:decimal" />
+              <xs:element name="MaMuonSach" msprop:Generator_ColumnPropNameInTable="MaMuonSachColumn" msprop:Generator_ColumnPropNameInRow="MaMuonSach" msprop:Generator_UserColumnName="MaMuonSach" msprop:Generator_ColumnVarNameInTable="columnMaMuonSach" type="xs:int" />
+              <xs:element name="NgayTra" msprop:Generator_ColumnPropNameInTable="NgayTraColumn" msprop:Generator_ColumnPropNameInRow="NgayTra" msprop:Generator_UserColumnName="NgayTra" msprop:Generator_ColumnVarNameInTable="columnNgayTra" type="xs:dateTime" />
+              <xs:element name="TienPhat" msprop:Generator_ColumnPropNameInTable="TienPhatColumn" msprop:Generator_ColumnPropNameInRow="TienPhat" msprop:Generator_UserColumnName="TienPhat" msprop:Generator_ColumnVarNameInTable="columnTienPhat" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -505,7 +505,7 @@ SELECT MaMuonSach, NgayTra, TienPhat FROM TRASACH WHERE (MaMuonSach = @MaMuonSac
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="FK__MUONSACH__MaDocG__34C8D9D1" msdata:parent="DOCGIA" msdata:child="MUONSACH" msdata:parentkey="MaDocGia" msdata:childkey="MaDocGia" msprop:Generator_UserParentTable="DOCGIA" msprop:Generator_UserChildTable="MUONSACH" msprop:Generator_RelationVarName="relationFK__MUONSACH__MaDocG__34C8D9D1" msprop:Generator_ChildPropName="GetMUONSACHRows" msprop:Generator_ParentPropName="DOCGIARow" msprop:Generator_UserRelationName="FK__MUONSACH__MaDocG__34C8D9D1" />
-      <msdata:Relationship name="FK__MUONSACH__MaSach__35BCFE0A" msdata:parent="SACH" msdata:child="MUONSACH" msdata:parentkey="MaSach" msdata:childkey="MaSach" msprop:Generator_UserParentTable="SACH" msprop:Generator_UserChildTable="MUONSACH" msprop:Generator_RelationVarName="relationFK__MUONSACH__MaSach__35BCFE0A" msprop:Generator_UserRelationName="FK__MUONSACH__MaSach__35BCFE0A" msprop:Generator_ChildPropName="GetMUONSACHRows" msprop:Generator_ParentPropName="SACHRow" />
+      <msdata:Relationship name="FK__MUONSACH__MaSach__35BCFE0A" msdata:parent="SACH" msdata:child="MUONSACH" msdata:parentkey="MaSach" msdata:childkey="MaSach" msprop:Generator_UserParentTable="SACH" msprop:Generator_UserChildTable="MUONSACH" msprop:Generator_RelationVarName="relationFK__MUONSACH__MaSach__35BCFE0A" msprop:Generator_ChildPropName="GetMUONSACHRows" msprop:Generator_UserRelationName="FK__MUONSACH__MaSach__35BCFE0A" msprop:Generator_ParentPropName="SACHRow" />
       <msdata:Relationship name="FK__THUTIEN__MaDocGi__403A8C7D" msdata:parent="DOCGIA" msdata:child="THUTIEN" msdata:parentkey="MaDocGia" msdata:childkey="MaDocGia" msprop:Generator_UserParentTable="DOCGIA" msprop:Generator_UserChildTable="THUTIEN" msprop:Generator_RelationVarName="relationFK__THUTIEN__MaDocGi__403A8C7D" msprop:Generator_ChildPropName="GetTHUTIENRows" msprop:Generator_ParentPropName="DOCGIARow" msprop:Generator_UserRelationName="FK__THUTIEN__MaDocGi__403A8C7D" />
       <msdata:Relationship name="FK__TRASACH__MaMuonS__3B75D760" msdata:parent="MUONSACH" msdata:child="TRASACH" msdata:parentkey="MaMuonSach" msdata:childkey="MaMuonSach" msprop:Generator_UserParentTable="MUONSACH" msprop:Generator_UserChildTable="TRASACH" msprop:Generator_RelationVarName="relationFK__TRASACH__MaMuonS__3B75D760" msprop:Generator_ChildPropName="GetTRASACHRows" msprop:Generator_ParentPropName="MUONSACHRow" msprop:Generator_UserRelationName="FK__TRASACH__MaMuonS__3B75D760" />
     </xs:appinfo>
