@@ -53,24 +53,52 @@ namespace LibManagement
         private void btnFind_Click(object sender, EventArgs e)
         {
             //Using the option in combobox to find the book
-            if (cbxOption.Text == "Mã sách")
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM SACH WHERE MASACH = '" + txtFind.Text + "'";
-                adapter = new SqlDataAdapter(cmd);
-                dt.Clear();
-                adapter.Fill(dt);
-                dgvBookFind.DataSource = dt;
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    string selectedCriteria = cmbOption.SelectedItem.ToString();
+                    string query = "SELECT * FROM SACH WHERE ";
+                    string parameterName = "@SearchTerm";
+
+                    switch (selectedCriteria)
+                    {
+                        case "Mã sách":
+                            query += "MASACH LIKE " + parameterName;
+                            break;
+                        case "Tên sách":
+                            query += "TENSACH LIKE " + parameterName;
+                            break;
+                        case "Tác giả":
+                            query += "TACGIA LIKE " + parameterName;
+                            break;
+                        case "Nhà xuất bản":
+                            query += "NHAXB LIKE " + parameterName;
+                            break;
+                        case "Năm xuất bản":
+                            query += "NAMXB LIKE " + parameterName;
+                            break;
+                        case "Thể loại":
+                            query += "THELOAI LIKE " + parameterName;
+                            break;
+                        default:
+                            // Handle invalid selection
+                            return;
+                    }
+
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue(parameterName, "%" + txtFind.Text + "%");
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        dt.Clear();
+                        adapter.Fill(dt);
+                        dgvBookFind.DataSource = dt;
+                    }
+                }
             }
-            if (cbxOption.Text == "Tên sách")
-            {
-                cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM SACH WHERE TENSACH LIKE '%" + txtFind.Text + "%'";
-                adapter = new SqlDataAdapter(cmd);
-                dt.Clear();
-                adapter.Fill(dt);
-                dgvBookFind.DataSource = dt;
-            }
+
         }
 
         private void FindBookForm_FormClosed(object sender, FormClosedEventArgs e)

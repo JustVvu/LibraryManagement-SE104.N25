@@ -35,11 +35,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvFindReader = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.qUANLYTHUVIENDataSet = new LibManagement.QUANLYTHUVIENDataSet();
             this.qUANLYTHUVIENDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFindReader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +50,9 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Mã độc giả",
+            "Tên độc giả",
+            "CMND/CCCD",
+            "Số điện thoại"});
             "Tên độc giả"});
             this.comboBox1.Location = new System.Drawing.Point(124, 95);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -111,17 +114,19 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // dataGridView1
+            // dgvFindReader
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 183);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(699, 242);
-            this.dataGridView1.TabIndex = 6;
+
+            this.dgvFindReader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFindReader.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvFindReader.Location = new System.Drawing.Point(0, 183);
+            this.dgvFindReader.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvFindReader.Name = "dgvFindReader";
+            this.dgvFindReader.RowHeadersWidth = 51;
+            this.dgvFindReader.RowTemplate.Height = 24;
+            this.dgvFindReader.Size = new System.Drawing.Size(699, 242);
+            this.dgvFindReader.TabIndex = 6;
+            this.dgvFindReader.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFindReader_CellContentDoubleClick);
             // 
             // label3
             // 
@@ -150,7 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 425);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvFindReader);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.label2);
@@ -162,7 +167,7 @@
             this.Text = "Tra cứu Độc giả";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindReaderForm_FormClosed);
             this.Load += new System.EventHandler(this.TimDocGiaForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFindReader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -178,7 +183,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvFindReader;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource qUANLYTHUVIENDataSetBindingSource;
         private QUANLYTHUVIENDataSet qUANLYTHUVIENDataSet;

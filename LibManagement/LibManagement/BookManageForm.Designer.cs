@@ -202,7 +202,7 @@
             this.dgvBookManage.RowTemplate.Height = 24;
             this.dgvBookManage.Size = new System.Drawing.Size(1311, 179);
             this.dgvBookManage.TabIndex = 15;
-            this.dgvBookManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookManage_CellContentClick);
+            this.dgvBookManage.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookManage_CellContentDoubleClick);
             // 
             // btnCancel
             // 
