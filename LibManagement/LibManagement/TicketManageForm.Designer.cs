@@ -39,7 +39,7 @@
             this.txtMaSach = new System.Windows.Forms.TextBox();
             this.txtMaDocGia = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.txtMaPhieu = new System.Windows.Forms.TextBox();
+            this.txtMaMuonSach = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvMuonSach = new System.Windows.Forms.DataGridView();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -50,18 +50,18 @@
             this.tabTraSach = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnXoa2 = new System.Windows.Forms.Button();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.btnTimKiem2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt = new System.Windows.Forms.TextBox();
+            this.txtMaDocGia2 = new System.Windows.Forms.TextBox();
+            this.txtMaMuonSach2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnThoat2 = new System.Windows.Forms.Button();
+            this.btnThem2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             this.tabPage1.Controls.Add(this.txtMaSach);
             this.tabPage1.Controls.Add(this.txtMaDocGia);
             this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.txtMaPhieu);
+            this.tabPage1.Controls.Add(this.txtMaMuonSach);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.dgvMuonSach);
             this.tabPage1.Controls.Add(this.btnThoat);
@@ -214,14 +214,14 @@
             this.textBox4.Text = "Quản lí mượn sách";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtMaPhieu
+            // txtMaMuonSach
             // 
-            this.txtMaPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPhieu.Location = new System.Drawing.Point(268, 69);
-            this.txtMaPhieu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaPhieu.Name = "txtMaPhieu";
-            this.txtMaPhieu.Size = new System.Drawing.Size(372, 30);
-            this.txtMaPhieu.TabIndex = 16;
+            this.txtMaMuonSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaMuonSach.Location = new System.Drawing.Point(268, 69);
+            this.txtMaMuonSach.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaMuonSach.Name = "txtMaMuonSach";
+            this.txtMaMuonSach.Size = new System.Drawing.Size(372, 30);
+            this.txtMaMuonSach.TabIndex = 16;
             // 
             // label10
             // 
@@ -325,18 +325,18 @@
             // 
             this.tabPage2.Controls.Add(this.dgvTraSach);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.btnXoa2);
+            this.tabPage2.Controls.Add(this.btnDetail);
+            this.tabPage2.Controls.Add(this.btnTimKiem2);
             this.tabPage2.Controls.Add(this.dateTimePicker1);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.dateTimePicker2);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.txt);
+            this.tabPage2.Controls.Add(this.txtMaDocGia2);
+            this.tabPage2.Controls.Add(this.txtMaMuonSach2);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button6);
+            this.tabPage2.Controls.Add(this.btnThoat2);
+            this.tabPage2.Controls.Add(this.btnThem2);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label9);
@@ -360,38 +360,38 @@
             this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnXoa2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(772, 158);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 39);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnXoa2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa2.Location = new System.Drawing.Point(772, 111);
+            this.btnXoa2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa2.Name = "btnXoa2";
+            this.btnXoa2.Size = new System.Drawing.Size(100, 39);
+            this.btnXoa2.TabIndex = 51;
+            this.btnXoa2.Text = "Xóa";
+            this.btnXoa2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDetail
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(772, 111);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 39);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetail.Location = new System.Drawing.Point(901, 158);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(114, 39);
+            this.btnDetail.TabIndex = 50;
+            this.btnDetail.Text = "Chi tiết";
+            this.btnDetail.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnTimKiem2
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(901, 62);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 39);
-            this.button4.TabIndex = 49;
-            this.button4.Text = "Tìm kiếm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnTimKiem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem2.Location = new System.Drawing.Point(901, 62);
+            this.btnTimKiem2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTimKiem2.Name = "btnTimKiem2";
+            this.btnTimKiem2.Size = new System.Drawing.Size(114, 39);
+            this.btnTimKiem2.TabIndex = 49;
+            this.btnTimKiem2.Text = "Tìm kiếm";
+            this.btnTimKiem2.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -410,9 +410,9 @@
             this.label5.Location = new System.Drawing.Point(51, 221);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 25);
+            this.label5.Size = new System.Drawing.Size(154, 25);
             this.label5.TabIndex = 47;
-            this.label5.Text = "Ngày trả:";
+            this.label5.Text = "Ngày trả thực tế:";
             // 
             // dateTimePicker2
             // 
@@ -424,32 +424,32 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(214, 30);
             this.dateTimePicker2.TabIndex = 46;
             // 
-            // textBox2
+            // txt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(267, 143);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(373, 30);
-            this.textBox2.TabIndex = 42;
+            this.txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt.Location = new System.Drawing.Point(267, 143);
+            this.txt.Margin = new System.Windows.Forms.Padding(4);
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(373, 30);
+            this.txt.TabIndex = 42;
             // 
-            // textBox3
+            // txtMaDocGia2
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(267, 106);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(372, 30);
-            this.textBox3.TabIndex = 41;
+            this.txtMaDocGia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDocGia2.Location = new System.Drawing.Point(267, 106);
+            this.txtMaDocGia2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaDocGia2.Name = "txtMaDocGia2";
+            this.txtMaDocGia2.Size = new System.Drawing.Size(372, 30);
+            this.txtMaDocGia2.TabIndex = 41;
             // 
-            // textBox5
+            // txtMaMuonSach2
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(267, 69);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(372, 30);
-            this.textBox5.TabIndex = 37;
+            this.txtMaMuonSach2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaMuonSach2.Location = new System.Drawing.Point(267, 69);
+            this.txtMaMuonSach2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaMuonSach2.Name = "txtMaMuonSach2";
+            this.txtMaMuonSach2.Size = new System.Drawing.Size(372, 30);
+            this.txtMaMuonSach2.TabIndex = 37;
             // 
             // label6
             // 
@@ -458,31 +458,31 @@
             this.label6.Location = new System.Drawing.Point(51, 185);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 25);
+            this.label6.Size = new System.Drawing.Size(169, 25);
             this.label6.TabIndex = 45;
-            this.label6.Text = "Ngày mượn: ";
+            this.label6.Text = "Ngày trả đăng kí : ";
             // 
-            // button5
+            // btnThoat2
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(901, 111);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 39);
-            this.button5.TabIndex = 44;
-            this.button5.Text = "Thoát";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnThoat2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat2.Location = new System.Drawing.Point(901, 111);
+            this.btnThoat2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat2.Name = "btnThoat2";
+            this.btnThoat2.Size = new System.Drawing.Size(114, 39);
+            this.btnThoat2.TabIndex = 44;
+            this.btnThoat2.Text = "Thoát";
+            this.btnThoat2.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnThem2
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(772, 62);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 39);
-            this.button6.TabIndex = 43;
-            this.button6.Text = "Thêm";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnThem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem2.Location = new System.Drawing.Point(772, 62);
+            this.btnThem2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem2.Name = "btnThem2";
+            this.btnThem2.Size = new System.Drawing.Size(100, 39);
+            this.btnThem2.TabIndex = 43;
+            this.btnThem2.Text = "Thêm";
+            this.btnThem2.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -575,7 +575,7 @@
         private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.TextBox txtMaDocGia;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox txtMaPhieu;
+        private System.Windows.Forms.TextBox txtMaMuonSach;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvMuonSach;
         private System.Windows.Forms.Button btnThoat;
@@ -594,18 +594,18 @@
         private QUANLYTHUVIENDataSet quanlythuvienDataSet1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnXoa2;
+        private System.Windows.Forms.Button btnDetail;
+        private System.Windows.Forms.Button btnTimKiem2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.TextBox txtMaDocGia2;
+        private System.Windows.Forms.TextBox txtMaMuonSach2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnThoat2;
+        private System.Windows.Forms.Button btnThem2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

@@ -40,7 +40,7 @@ namespace LibManagement
         public TicketManageForm(string MaPhieu, string MaDocGia, string MaSach, string NgayMuon, string NgayTra)
         {
             InitializeComponent();
-            txtMaPhieu.Text = MaPhieu;
+            txtMaMuonSach.Text = MaPhieu;
             txtMaDocGia.Text = MaDocGia;
             txtMaSach.Text = MaSach;
             dtpNgayMuon.Value = Convert.ToDateTime(NgayMuon);
@@ -53,7 +53,7 @@ namespace LibManagement
             conn.Open();
             loadData();
 
-            txtMaPhieu.Enabled = false;
+            txtMaMuonSach.Enabled = false;
             btnThoat.Enabled = false;
 
             dtpNgayMuon.Value = DateTime.Now;
@@ -86,7 +86,7 @@ namespace LibManagement
             txtMaSach.Enabled = true;
             txtMaDocGia.Enabled = true;
 
-            txtMaPhieu.Text = "";
+            txtMaMuonSach.Text = "";
             txtMaSach.Text = "";
             txtMaDocGia.Text = "";
             dtpNgayMuon.Value = DateTime.Now;
@@ -95,7 +95,7 @@ namespace LibManagement
         private void dgvPhieuMuon_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //Get data from datagridview to textbox
-            txtMaPhieu.Text = dgvMuonSach.CurrentRow.Cells[0].Value.ToString();
+            txtMaMuonSach.Text = dgvMuonSach.CurrentRow.Cells[0].Value.ToString();
             txtMaDocGia.Text = dgvMuonSach.CurrentRow.Cells[1].Value.ToString();
             txtMaSach.Text = dgvMuonSach.CurrentRow.Cells[2].Value.ToString();
             dtpNgayMuon.Value = Convert.ToDateTime(dgvMuonSach.CurrentRow.Cells[3].Value.ToString());
@@ -143,7 +143,7 @@ namespace LibManagement
             {
                 cmd = conn.CreateCommand();
                 cmd.CommandText = "DELETE FROM MUONSACH WHERE MaMuonSach = @MaPhieu";
-                cmd.Parameters.AddWithValue("@MaPhieu", txtMaPhieu.Text);
+                cmd.Parameters.AddWithValue("@MaPhieu", txtMaMuonSach.Text);
                 cmd.ExecuteNonQuery();
 
                 loadData();
