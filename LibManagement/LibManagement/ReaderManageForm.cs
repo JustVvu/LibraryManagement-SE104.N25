@@ -63,22 +63,53 @@ namespace LibManagement
             conn.Open();
             loadData();
 
+            txtMaDocGia.Enabled = false;
+
             txtDebt.Text = "0";
             dtNgayLapThe.Value = DateTime.Today;
             dtNgayHetHan.Value = dtNgayLapThe.Value.AddMonths(6);
+
+            dgvReaderManage.Columns[0].HeaderText = "Mã độc giả";
+            dgvReaderManage.Columns[1].HeaderText = "Họ tên";
+            dgvReaderManage.Columns[2].HeaderText = "Giới tính";
+            dgvReaderManage.Columns[3].HeaderText = "Ngày sinh";
+            dgvReaderManage.Columns[4].HeaderText = "CMND/CCCD";
+            dgvReaderManage.Columns[5].HeaderText = "Số điện thoại";
+            dgvReaderManage.Columns[6].HeaderText = "Email";
+            dgvReaderManage.Columns[7].HeaderText = "Ngày lập thẻ";
+            dgvReaderManage.Columns[8].HeaderText = "Ngày hết hạn";
+            dgvReaderManage.Columns[9].HeaderText = "Tiền nợ";
+            dgvReaderManage.Columns[10].HeaderText = "Tổng phạt";
+
+            //set width for each column to 130px and make the header text Bold using loop
+            for (int i = 0; i < dgvReaderManage.Columns.Count; i++)
+            {
+                dgvReaderManage.Columns[i].Width = 130;
+                dgvReaderManage.Columns[i].HeaderCell.Style.Font = new Font("Arial", 9.75F, FontStyle.Bold);
+                dgvReaderManage.Columns[i].DefaultCellStyle.Font = new Font("Arial", 9.75F, FontStyle.Regular);
+            }
         }
 
         //Check if the reader is in the database
         private bool CheckReader()
         {
-            cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM DOCGIA WHERE MaDocGia = '" + txtMaDocGia.Text + "'";
-            adapter = new SqlDataAdapter(cmd);
-            dt.Clear();
-            adapter.Fill(dt);
-            if (dt.Rows.Count > 0)
+            //check the reader CMND or SDT is in the database
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                return true;
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * FROM DOCGIA WHERE CMND = @CMND OR SDT = @SDT";
+                    cmd.Parameters.AddWithValue("@CMND", txtCMND.Text);
+                    cmd.Parameters.AddWithValue("@SDT", txtSDT.Text);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return true;
+                        }
+                    }
+                }
             }
             return false;
         }
@@ -101,10 +132,9 @@ namespace LibManagement
                     conn.Open();
                     using (SqlCommand cmd = conn.CreateCommand())
                     {
-                        cmd.CommandText = "INSERT INTO DOCGIA (MaDocGia, HoTen, GioiTinh, NgaySinh, CMND, SDT, Email, NgayLapThe, NgayHetHan, TienNo, TongPhat) " +
-                                          "VALUES (@MaDocGia, @HoTen, @GioiTinh, @NgaySinh, @CMND, @SDT, @Email, @NgayLapThe, @NgayHetHan, @TienNo, @TongPhat)";
+                        cmd.CommandText = "INSERT INTO DOCGIA (HoTen, GioiTinh, NgaySinh, CMND, SDT, Email, NgayLapThe, NgayHetHan) " +
+                                          "VALUES (@HoTen, @GioiTinh, @NgaySinh, @CMND, @SDT, @Email, @NgayLapThe, @NgayHetHan)";
 
-                        cmd.Parameters.AddWithValue("@MaDocGia", txtMaDocGia.Text);
                         cmd.Parameters.AddWithValue("@HoTen", txtHoTen.Text);
                         cmd.Parameters.AddWithValue("@GioiTinh", txtGioiTinh.Text);
                         cmd.Parameters.AddWithValue("@NgaySinh", dtNgaySinh.Value.Date);
@@ -113,8 +143,6 @@ namespace LibManagement
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                         cmd.Parameters.AddWithValue("@NgayLapThe", dtNgayLapThe.Value.Date);
                         cmd.Parameters.AddWithValue("@NgayHetHan", dtNgayHetHan.Value.Date);
-                        cmd.Parameters.AddWithValue("@TienNo", Convert.ToInt32(txtDebt.Text));
-                        cmd.Parameters.AddWithValue("@TongPhat", Convert.ToInt32(txtDebt.Text));
 
                         cmd.ExecuteNonQuery();
                     }
@@ -141,7 +169,7 @@ namespace LibManagement
                 cmd = conn.CreateCommand();
                 cmd.CommandText = "UPDATE DOCGIA SET HoTen = @HoTen, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh," +
                                   "CMND = @CMND, SDT = @SDT, Email = @Email, NgayLapThe = @NgayLapThe, NgayHetHan = @NgayHetHan " +
-                                  "TienNo = @TienNo, WHERE MaDocGia = @MaDocGia";
+                                  "WHERE MaDocGia = @MaDocGia";
 
                 cmd.Parameters.AddWithValue("@HoTen", txtHoTen.Text);
                 cmd.Parameters.AddWithValue("@GioiTinh", txtGioiTinh.Text);
@@ -151,11 +179,11 @@ namespace LibManagement
                 cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@NgayLapThe", dtNgayLapThe.Value.Date);
                 cmd.Parameters.AddWithValue("@NgayHetHan", dtNgayHetHan.Value.Date);
-                cmd.Parameters.AddWithValue("@TienNo", Convert.ToInt32(txtDebt.Text));
                 cmd.Parameters.AddWithValue("@MaDocGia", txtMaDocGia.Text);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Sửa độc giả thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
                 loadData();
             }
             catch (Exception ex)
@@ -165,9 +193,6 @@ namespace LibManagement
                 MessageBox.Show(ex.Message);
                 loadData();
             }
-
-            Clear();
-
         }
 
         private void Xoa_Click(object sender, EventArgs e)
@@ -267,6 +292,14 @@ namespace LibManagement
         private void NgayLapThe_ValueChanged(object sender, EventArgs e)
         {
             dtNgayHetHan.Value = dtNgayLapThe.Value.AddMonths(6);
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            //Open FindReaderForm
+            FindReaderForm findReaderForm = new FindReaderForm();
+            findReaderForm.Show();
+            this.Hide();
         }
     }
 }

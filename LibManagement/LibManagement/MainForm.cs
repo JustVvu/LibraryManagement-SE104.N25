@@ -58,16 +58,24 @@ namespace LibManagement
         private void mượnTrảSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Open the BorrowBookForm
-            BorrowBookForm BorrowBookForm = new BorrowBookForm();
+            TicketManageForm BorrowBookForm = new TicketManageForm();
             BorrowBookForm.Show();
             this.Hide();
         }
 
-        private void quảnLíĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        private void lậpThẻĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           //Open the ReaderManageForm
+            //Open the ReaderManageForm
             ReaderManageForm ReaderManageForm = new ReaderManageForm();
             ReaderManageForm.Show();
+            this.Hide();
+        }
+
+        private void lậpPhiếuThuTiềnPhạtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open the FineManageForm
+            FineManageForm FineManageForm = new FineManageForm();
+            FineManageForm.Show();
             this.Hide();
         }
     }
