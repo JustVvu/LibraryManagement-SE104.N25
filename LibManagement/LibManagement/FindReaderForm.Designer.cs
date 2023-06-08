@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtTimDocGia = new System.Windows.Forms.TextBox();
+            this.cbxOption = new System.Windows.Forms.ComboBox();
+            this.txtFind = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
@@ -44,39 +44,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbxOption
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbxOption.FormattingEnabled = true;
+            this.cbxOption.Items.AddRange(new object[] {
             "Mã độc giả",
             "Tên độc giả",
             "CMND/CCCD",
             "Số điện thoại"});
-            "Tên độc giả"});
-            this.comboBox1.Location = new System.Drawing.Point(124, 95);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 24);
-            this.comboBox1.TabIndex = 0;
+            this.cbxOption.Location = new System.Drawing.Point(158, 111);
+            this.cbxOption.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxOption.Name = "cbxOption";
+            this.cbxOption.Size = new System.Drawing.Size(143, 28);
+            this.cbxOption.TabIndex = 0;
             // 
-            // txtTimDocGia
+            // txtFind
             // 
-            this.txtTimDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTimDocGia.Location = new System.Drawing.Point(322, 95);
-            this.txtTimDocGia.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTimDocGia.Name = "txtTimDocGia";
-            this.txtTimDocGia.Size = new System.Drawing.Size(212, 23);
-            this.txtTimDocGia.TabIndex = 1;
+            this.txtFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtFind.Location = new System.Drawing.Point(427, 113);
+            this.txtFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(281, 30);
+            this.txtFind.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(9, 95);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 117);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.Size = new System.Drawing.Size(140, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tìm kiếm theo:";
             // 
@@ -84,31 +82,31 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(266, 26);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(355, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 26);
+            this.label2.Size = new System.Drawing.Size(215, 31);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tra cứu độc giả";
             // 
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFind.Location = new System.Drawing.Point(570, 90);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFind.Location = new System.Drawing.Point(760, 111);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 32);
+            this.btnFind.Size = new System.Drawing.Size(113, 39);
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "Tìm kiếm";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExit.Location = new System.Drawing.Point(570, 140);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Location = new System.Drawing.Point(760, 172);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 32);
+            this.btnExit.Size = new System.Drawing.Size(113, 39);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -116,15 +114,14 @@
             // 
             // dgvFindReader
             // 
-
             this.dgvFindReader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFindReader.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvFindReader.Location = new System.Drawing.Point(0, 183);
-            this.dgvFindReader.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvFindReader.Location = new System.Drawing.Point(0, 225);
+            this.dgvFindReader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvFindReader.Name = "dgvFindReader";
             this.dgvFindReader.RowHeadersWidth = 51;
             this.dgvFindReader.RowTemplate.Height = 24;
-            this.dgvFindReader.Size = new System.Drawing.Size(699, 242);
+            this.dgvFindReader.Size = new System.Drawing.Size(932, 298);
             this.dgvFindReader.TabIndex = 6;
             this.dgvFindReader.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFindReader_CellContentDoubleClick);
             // 
@@ -132,10 +129,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(248, 95);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(331, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.Size = new System.Drawing.Size(90, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "Từ khóa:";
             // 
@@ -151,18 +147,18 @@
             // 
             // FindReaderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 425);
+            this.ClientSize = new System.Drawing.Size(932, 523);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvFindReader);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTimDocGia);
-            this.Controls.Add(this.comboBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.txtFind);
+            this.Controls.Add(this.cbxOption);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FindReaderForm";
             this.Text = "Tra cứu Độc giả";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindReaderForm_FormClosed);
@@ -177,8 +173,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox txtTimDocGia;
+        private System.Windows.Forms.ComboBox cbxOption;
+        private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFind;

@@ -1,0 +1,40 @@
+* Biến tự cập nhật (không được insert hay update):
+	+ Tất cả các khóa chính, trừ khóa chính của trả sách phải insert tương ứng với một MaMuonSach có tồn tại.
+	+ DOCGIA: tongphat, tienno.
+	+ TRASACH: tienphat.
+
+* Nguyên tắc: có độc giả mới có mượn, có mượn mới có trả, có nợ mới có thu. Dữ liệu liên quan tiền bạc ưu tiên bảo vệ hàng đầu.
+* Thứ tự insert: DOCGIA, SACH -> MUONSACH -> TRASACH -> THUTIEN. Khi xóa sẽ đi ngược quy trình này. Các trigger sẽ được liên kết chặt chẽ theo quy trình trên.
+
+* Constraint: rất dễ hiểu.
+
+* Trigger: tất cả trigger đều hỗ trợ cho các thao tác với nhiều hơn một dòng dữ liệu.
+- DOCGIA:
+	+ Thêm: Ngăn insert tongphat hoặc tienno.
+	+ Xóa: Xóa thu tiền, mượn sách có liên quan.
+	+ Sửa: Ngày hết hạn chỉ được gia hạn chứ không được rút ngắn (tránh xung đột với mượn sách).
+
+- MUONSACH:
+	+ Thêm: Không cho phép mã sách trống (tránh lỗ hỗng bảo mật); không cho mượn nếu độc giả hết hạn; không cho mượn nhiều hơn 5 quyển; nếu tất cả thỏa yêu cầu thì số lượng SACH tương ứng được trừ đi.
+	+ Xóa: Tăng số lượng SACH tương ứng (tránh xung đột với thao tác xóa trả sách); xóa trả sách liên quan.
+	+ Sửa: Ngày mượn mới không được lớn hơn hạn độc giả; ngày trả sách không được nhỏ hơn ngày mượn.
+
+- TRASACH:
+	+ Thêm: Ngày trả sách không được nhỏ hơn ngày mượn; không cho phép tự insert tienphat; nếu tất cả thỏa mãn thì số lượng SACH tương ứng tăng, tiền phạt được tính tự động bằng 1000 * ngày trễ (nếu không trễ thì tienphat = 0), tự động cập nhật tongphat và tienno của DOCGIA một khoảng tương đương tienphat.
+	+ Xóa: Số lượng SACH tương ứng bị trừ đi; tự động trừ tongphat và tienno của DOCGIA một khoảng tương đương tienphat.
+	+ Sửa: Ngày trả không được bé hơn ngày mượn.
+
+- THUTIEN:
+	+ Thêm: Không cho phép thu nhiều hơn nợ; nếu thỏa thì tiền nợ của DOCGIA trừ đi một khoảng tương đương.
+	+ Xóa: tienno của DOCGIA tăng một khoảng tương đương.
+
+* Trong trương hợp SACH bị xóa, khóa ngoại có liên quan trong MUONSACH được set về null.
+
+* Phân quyền người dùng thông thường (chưa triển khai):
+	+ DENY insert, update on DOCGIA.(MaDocGia, TongPhat, TienNo).
+	+ DENY insert, update on SACH.MaSach.
+	+ DENY insert, update on MUONSACH.MaMuonSach; DENY update on MUONSACH.MaSach.
+	+ DENY insert, update on TRASACH.(MaMuonSach, TienPhat).
+	+ DENY update, delete on THUTIEN.
+	+ Log lại toàn bộ hoạt động.
+	+ Chỉ có dba mới được phép xóa THUTIEN .
