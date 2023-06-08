@@ -45,45 +45,8 @@ namespace LibManagement
             txtValue.Clear();
             txtGenre.Clear();
         }
-        public BookManageForm()
-        {
-            InitializeComponent();
-        }
-
-        //Create the constructor to pass the value from the FindBook form to this form
-        public BookManageForm(string bookID, string bookName, string author, string year, string publisher, string language, int quantity, int value, string genre)
-        {
-            InitializeComponent();
-
-            txtBookID.Text = bookID;
-            txtBookName.Text = bookName;
-            txtAuthor.Text = author;
-            txtPublisher.Text = publisher;
-
-            string dateString = year;
-            DateTime parsedDate = DateTime.ParseExact(dateString, "yyyy", CultureInfo.InvariantCulture);
-            dtpYear.Value = parsedDate;
-
-            txtLanguage.Text = language;
-            txtQuantity.Text = quantity.ToString();
-            txtValue.Text = value.ToString();
-            txtGenre.Text = genre;
-        }
-
-        private void BookManageForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //Go back to Mainform
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-        }
-
         bool CheckEmpty()
         {
-            if (txtBookID.Text == "")
-            {
-                MessageBox.Show("Mã sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return true;
-            }
             if (txtBookName.Text == "")
             {
                 MessageBox.Show("Tên sách trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -134,12 +97,63 @@ namespace LibManagement
             }
             return true;
         }
+        public BookManageForm()
+        {
+            InitializeComponent();
+        }
+
+        //Create the constructor to pass the value from the FindBook form to this form
+        public BookManageForm(string bookID, string bookName, string author, string year, string publisher, string language, int quantity, int value, string genre)
+        {
+            InitializeComponent();
+
+            txtBookID.Text = bookID;
+            txtBookName.Text = bookName;
+            txtAuthor.Text = author;
+            txtPublisher.Text = publisher;
+
+            string dateString = year;
+            DateTime parsedDate = DateTime.ParseExact(dateString, "yyyy", CultureInfo.InvariantCulture);
+            dtpYear.Value = parsedDate;
+
+            txtLanguage.Text = language;
+            txtQuantity.Text = quantity.ToString();
+            txtValue.Text = value.ToString();
+            txtGenre.Text = genre;
+        }
+
+        private void BookManageForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Go back to Mainform
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+        }
         private void BookManageForm_Load(object sender, EventArgs e)
         {
             //Connect to database and load data to datagridview
             conn = new SqlConnection(connectionString);
             conn.Open();
             loadData();
+
+            txtBookID.Enabled = false;
+
+            dgvBookManage.Columns[0].HeaderText = "Mã sách";
+            dgvBookManage.Columns[1].HeaderText = "Tên sách";
+            dgvBookManage.Columns[2].HeaderText = "Tác giả";
+            dgvBookManage.Columns[3].HeaderText = "Năm xuất bản";
+            dgvBookManage.Columns[4].HeaderText = "Nhà xuất bản";
+            dgvBookManage.Columns[5].HeaderText = "Ngôn ngữ";
+            dgvBookManage.Columns[6].HeaderText = "Số lượng";
+            dgvBookManage.Columns[7].HeaderText = "Giá tiền";
+            dgvBookManage.Columns[8].HeaderText = "Thể loại";
+
+            //Set the width of the columns to 130px and make the header text bold using loop
+            for (int i = 0; i < dgvBookManage.Columns.Count; i++)
+            {
+                dgvBookManage.Columns[i].Width = 130;
+                dgvBookManage.Columns[i].HeaderCell.Style.Font = new Font("Arial", 9.75F, FontStyle.Bold);
+                dgvBookManage.Columns[i].DefaultCellStyle.Font = new Font("Arial", 9.75F, FontStyle.Regular);
+            }
         }
         private void dgvBookManage_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -185,8 +199,21 @@ namespace LibManagement
             try
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "INSERT INTO SACH VALUES ('" + txtBookID.Text + "', N'" + txtBookName.Text + "', N'" + txtAuthor.Text + "', '" + dtpYear.Text + "', N'" + txtPublisher.Text + "', N'" + txtLanguage.Text + "', '" + txtQuantity.Text + "', '" + txtValue.Text + "', N'" + txtGenre.Text + "')";
+                cmd.CommandText = "INSERT INTO SACH ( TenSach, TacGia, NamXB, NhaXB, NgonNgu, SoLuong, TriGia, TheLoai)" +
+                                    "VALUES (@BookName, @Author, @Year, @Publisher, @Language, @Quantity, @Value, @Genre)";
+
+                // Set parameter values
+                cmd.Parameters.AddWithValue("@BookName", txtBookName.Text);
+                cmd.Parameters.AddWithValue("@Author", txtAuthor.Text);
+                cmd.Parameters.AddWithValue("@Year", dtpYear.Text);
+                cmd.Parameters.AddWithValue("@Publisher", txtPublisher.Text);
+                cmd.Parameters.AddWithValue("@Language", txtLanguage.Text);
+                cmd.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
+                cmd.Parameters.AddWithValue("@Value", txtValue.Text);
+                cmd.Parameters.AddWithValue("@Genre", txtGenre.Text);
+
                 cmd.ExecuteNonQuery();
+
                 MessageBox.Show("Thêm sách thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
                 loadData();
@@ -197,7 +224,8 @@ namespace LibManagement
                 //show error
                 MessageBox.Show(ex.Message);
                 loadData();
-            }            
+            }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -225,7 +253,7 @@ namespace LibManagement
             try
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = "UPDATE SACH SET TenSach = @TenSach, TacGia = @TacGia, NamXuatBan = @NamXuatBan, NhaXuatBan = @NhaXuatBan, NgonNgu = @NgonNgu, SoLuong = @SoLuong, TriGia = @TriGia, TheLoai = @TheLoai WHERE MaSach = @MaSach";
+                cmd.CommandText = "UPDATE SACH SET TenSach = @TenSach, TacGia = @TacGia, NamXB = @NamXuatBan, NhaXB = @NhaXuatBan, NgonNgu = @NgonNgu, SoLuong = @SoLuong, TriGia = @TriGia, TheLoai = @TheLoai WHERE MaSach = @MaSach";
 
                 cmd.Parameters.AddWithValue("@TenSach", txtBookName.Text);
                 cmd.Parameters.AddWithValue("@TacGia", txtAuthor.Text);

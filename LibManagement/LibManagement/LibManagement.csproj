@@ -52,17 +52,23 @@
     <Compile Include="BookManageForm.Designer.cs">
       <DependentUpon>BookManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BorrowBookForm.cs">
+    <Compile Include="FindTicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BorrowBookForm.Designer.cs">
-      <DependentUpon>BorrowBookForm.cs</DependentUpon>
+    <Compile Include="FindTicketForm.Designer.cs">
+      <DependentUpon>FindTicketForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FineForm.cs">
+    <Compile Include="TicketManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FineForm.Designer.cs">
-      <DependentUpon>FineForm.cs</DependentUpon>
+    <Compile Include="TicketManageForm.Designer.cs">
+      <DependentUpon>TicketManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FineManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FineManageForm.Designer.cs">
+      <DependentUpon>FineManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -107,11 +113,14 @@
     <EmbeddedResource Include="BookManageForm.resx">
       <DependentUpon>BookManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BorrowBookForm.resx">
-      <DependentUpon>BorrowBookForm.cs</DependentUpon>
+    <EmbeddedResource Include="FindTicketForm.resx">
+      <DependentUpon>FindTicketForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FineForm.resx">
-      <DependentUpon>FineForm.cs</DependentUpon>
+    <EmbeddedResource Include="TicketManageForm.resx">
+      <DependentUpon>TicketManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FineManageForm.resx">
+      <DependentUpon>FineManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -1,6 +1,7 @@
 ﻿CREATE DATABASE QUANLYTHUVIEN;
 GO
 
+
 USE QUANLYTHUVIEN;
 GO
 
@@ -44,7 +45,7 @@ CREATE TABLE SACH (
 
 CREATE TABLE MUONSACH (
 	MaMuonSach int identity(1,1) primary key,
-	MaDocGia int foreign key references DOCGIA(MaDocGia),
+	MaDocGia int not null foreign key references DOCGIA(MaDocGia),
 	MaSach int foreign key references SACH(MaSach) on delete set null,
 	NgayMuon date not null,
 	HanTra date not null,
@@ -63,7 +64,7 @@ CREATE TABLE TRASACH (
 
 CREATE TABLE THUTIEN (
 	MaThuTien int identity(1,1) primary key,
-	MaDocGia int foreign key references DOCGIA(MaDocGia),
+	MaDocGia int not null foreign key references DOCGIA(MaDocGia),
 	NgayThu date not null,
 	TienThu money not null,
 	constraint chk_NgayThu check (NgayThu <= cast(getdate() as date)),

@@ -30,4 +30,6 @@ C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.exe
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.pdb
-C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.BorrowBookForm.resources
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.FineManageForm.resources
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.TicketManageForm.resources
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.FindTicketForm.resources
