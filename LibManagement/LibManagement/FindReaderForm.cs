@@ -15,10 +15,8 @@ namespace LibManagement
     {
         SqlConnection conn;
         SqlCommand cmd;
-        string connectionString = "Data Source=VU-NGUYEN;Initial Catalog=QUANLYTHUVIEN;Integrated Security=True";
         SqlDataAdapter adapter;
         DataTable dt = new DataTable();
-
         void loadData()
         {
             cmd = conn.CreateCommand();
@@ -44,7 +42,7 @@ namespace LibManagement
 
         private void TimDocGiaForm_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection(connectionString);
+            conn = new SqlConnection(connString.connectionString);
             conn.Open();
             loadData();
 
@@ -72,7 +70,7 @@ namespace LibManagement
             //Go back to ReaderManageForm
             ReaderManageForm readerManageForm = new ReaderManageForm();
             readerManageForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void dgvFindReader_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -94,7 +92,7 @@ namespace LibManagement
         private void btnFind_Click(object sender, EventArgs e)
         {
             //Using the option selected in the combobox to find the reader
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connString.connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -109,7 +107,7 @@ namespace LibManagement
                             query += "MADOCGIA LIKE " + parameterName;
                             break;
                         case "Tên độc giả":
-                            query += "TENDOCGIA LIKE " + parameterName;
+                            query += "HOTEN LIKE " + parameterName;
                             break;
                         case "CMND/CCCD":
                             query += "CMND LIKE " + parameterName;

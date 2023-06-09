@@ -17,7 +17,6 @@ namespace LibManagement
         //connect to database
         SqlConnection conn;
         SqlCommand cmd;
-        string connectionString = "Data Source=VU-NGUYEN;Initial Catalog=QUANLYTHUVIEN;Integrated Security=True";
         SqlDataAdapter adapter;
         DataTable dt = new DataTable();
 
@@ -51,6 +50,31 @@ namespace LibManagement
             dtNgayHetHan.Value = NgayHetHan;
             txtDebt.Text = No.ToString();
         }
+        public ReaderManageForm(string MaDocGia)
+        {
+            this.InitializeComponent();
+            //Use MaDocGia to find the reader in the database
+            conn = new SqlConnection(connString.connectionString);
+            conn.Open();
+            cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT * FROM DOCGIA WHERE MaDocGia = '" + MaDocGia + "'";
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                txtMaDocGia.Text = reader.GetInt32(0).ToString();
+                txtHoTen.Text = reader.GetString(1);
+                txtGioiTinh.Text = reader.GetString(2);
+                dtNgaySinh.Value = reader.GetDateTime(3);
+                txtCMND.Text = reader.GetString(4);
+                txtSDT.Text = reader.GetString(5);
+                txtEmail.Text = reader.GetString(6);
+                dtNgayLapThe.Value = reader.GetDateTime(7);
+                dtNgayHetHan.Value = reader.GetDateTime(8);
+                txtDebt.Text = reader.GetInt32(9).ToString();
+            }
+            reader.Close();
+            conn.Close();
+        }
         private void ReaderManageForm_Closed(object sender, EventArgs e)
         {
             MainForm mainForm = new MainForm();
@@ -59,7 +83,7 @@ namespace LibManagement
         private void ReaderManageForm_Load(object sender, EventArgs e)
         {
             //Load database
-            conn = new SqlConnection(connectionString);
+            conn = new SqlConnection(connString.connectionString);
             conn.Open();
             loadData();
 
@@ -94,7 +118,7 @@ namespace LibManagement
         private bool CheckReader()
         {
             //check the reader CMND or SDT is in the database
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connString.connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -127,7 +151,7 @@ namespace LibManagement
             //Add reader to the database and if succeed, show the message, if not show error and reload the datagridview
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(connString.connectionString))
                 {
                     conn.Open();
                     using (SqlCommand cmd = conn.CreateCommand())

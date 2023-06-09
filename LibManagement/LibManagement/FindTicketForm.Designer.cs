@@ -53,23 +53,29 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExit.Image = global::LibManagement.Properties.Resources.icons8_exit_32;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(760, 172);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(109, 39);
+            this.btnExit.Size = new System.Drawing.Size(130, 39);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "Thoát";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
             // 
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFind.Image = global::LibManagement.Properties.Resources.search;
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFind.Location = new System.Drawing.Point(760, 111);
             this.btnFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(109, 39);
+            this.btnFind.Size = new System.Drawing.Size(130, 39);
             this.btnFind.TabIndex = 11;
             this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
