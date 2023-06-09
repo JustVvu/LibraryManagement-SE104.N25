@@ -16,7 +16,6 @@ namespace LibManagement
         //Connect to database
         SqlConnection conn;
         SqlCommand cmd;
-        string connectionString = "Data Source=VU-NGUYEN;Initial Catalog=QUANLYTHUVIEN;Integrated Security=True";
         SqlDataAdapter adapter;
         DataTable dt = new DataTable();
 
@@ -38,7 +37,7 @@ namespace LibManagement
         private void FindTicket_Load(object sender, EventArgs e)
         {
             //Connect to database and load data to datagridview
-            conn = new SqlConnection(connectionString);
+            conn = new SqlConnection(connString.connectionString);
             conn.Open();
             loadData();
 
@@ -70,7 +69,7 @@ namespace LibManagement
         private void btnFind_Click(object sender, EventArgs e)
         {
             // Using the option in the combobox to find the ticket
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connString.connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -125,7 +124,7 @@ namespace LibManagement
             int i;
             i = dgvFindTicket.CurrentRow.Index;
             DataGridViewRow row = dgvFindTicket.Rows[i];
-            TicketManageForm ticketManageForm = new TicketManageForm(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString());
+            LendingBookForm ticketManageForm = new LendingBookForm(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString());
             ticketManageForm.Show();
             this.Hide();
         }

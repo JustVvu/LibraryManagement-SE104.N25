@@ -55,13 +55,6 @@ namespace LibManagement
             this.Hide();
         }
 
-        private void mượnTrảSáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Open the BorrowBookForm
-            TicketManageForm BorrowBookForm = new TicketManageForm();
-            BorrowBookForm.Show();
-            this.Hide();
-        }
 
         private void lậpThẻĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -76,6 +69,22 @@ namespace LibManagement
             //Open the FineManageForm
             FineManageForm FineManageForm = new FineManageForm();
             FineManageForm.Show();
+            this.Hide();
+        }
+
+        private void trảSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open the ReturnBookForm
+            ReturnBookForm ReturnBookForm = new ReturnBookForm();
+            ReturnBookForm.Show();
+            this.Hide();
+        }
+
+        private void đăngKíMượnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //open the LendingBookForm
+            LendingBookForm LendingBookForm = new LendingBookForm();
+            LendingBookForm.Show();
             this.Hide();
         }
     }

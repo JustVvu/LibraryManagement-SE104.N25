@@ -11,12 +11,11 @@ using System.Windows.Forms;
 
 namespace LibManagement
 {
-    public partial class TicketManageForm : Form
+    public partial class LendingBookForm : Form
     {
         //Connect to database
         SqlConnection conn;
         SqlCommand cmd;
-        string connectionString = "Data Source=VU-NGUYEN;Initial Catalog=QUANLYTHUVIEN;Integrated Security=True";
         SqlDataAdapter adapter;
         DataTable dt = new DataTable();
 
@@ -30,34 +29,33 @@ namespace LibManagement
             adapter.Fill(dt);
             dgvMuonSach.DataSource = dt;
         }
-
-        public TicketManageForm()
+        
+        public LendingBookForm()
         {
             InitializeComponent();
         }
 
         //Create a constructor to pass the value from the FindTicketForm to this form
-        public TicketManageForm(string MaPhieu, string MaDocGia, string MaSach, string NgayMuon, string NgayTra)
+        public LendingBookForm(string MaPhieu, string MaDocGia, string MaSach, string NgayMuon, string NgayTra)
         {
             InitializeComponent();
             txtMaMuonSach.Text = MaPhieu;
             txtMaDocGia.Text = MaDocGia;
             txtMaSach.Text = MaSach;
             dtpNgayMuon.Value = Convert.ToDateTime(NgayMuon);
-            dtpNgayTra.Value = Convert.ToDateTime(NgayTra);
+            dtpHanTra.Value = Convert.ToDateTime(NgayTra);
         }
         private void BorrowBookForm_Load(object sender, EventArgs e)
         {
-            //Connect to database and load data to datagridview
-            conn = new SqlConnection(connectionString);
+            //Connect to database and load data to dgvMuonSach
+            conn = new SqlConnection(connString.connectionString);
             conn.Open();
             loadData();
 
             txtMaMuonSach.Enabled = false;
-            btnThoat.Enabled = false;
 
             dtpNgayMuon.Value = DateTime.Now;
-            dtpNgayTra.Value = dtpNgayMuon.Value.AddDays(7);
+            dtpHanTra.Value = dtpNgayMuon.Value.AddDays(7);
 
             dgvMuonSach.Columns[0].HeaderText = "Mã mượn sách";
             dgvMuonSach.Columns[1].HeaderText = "Mã độc giả";
@@ -72,6 +70,7 @@ namespace LibManagement
                 dgvMuonSach.Columns[i].HeaderCell.Style.Font = new Font("Arial", 9.75F, FontStyle.Bold);
                 dgvMuonSach.Columns[i].DefaultCellStyle.Font = new Font("Arial", 9.75F, FontStyle.Regular);
             }
+
         }
         private void BorrowBookForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -85,12 +84,13 @@ namespace LibManagement
         {
             txtMaSach.Enabled = true;
             txtMaDocGia.Enabled = true;
+            txtMaMuonSach.Enabled = true;
 
             txtMaMuonSach.Text = "";
             txtMaSach.Text = "";
             txtMaDocGia.Text = "";
             dtpNgayMuon.Value = DateTime.Now;
-            dtpNgayTra.Value = dtpNgayMuon.Value.AddDays(7);
+            dtpHanTra.Value = dtpNgayMuon.Value.AddDays(7);
         }
         private void dgvPhieuMuon_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -99,8 +99,9 @@ namespace LibManagement
             txtMaDocGia.Text = dgvMuonSach.CurrentRow.Cells[1].Value.ToString();
             txtMaSach.Text = dgvMuonSach.CurrentRow.Cells[2].Value.ToString();
             dtpNgayMuon.Value = Convert.ToDateTime(dgvMuonSach.CurrentRow.Cells[3].Value.ToString());
-            dtpNgayTra.Value = Convert.ToDateTime(dgvMuonSach.CurrentRow.Cells[4].Value.ToString());
+            dtpHanTra.Value = Convert.ToDateTime(dgvMuonSach.CurrentRow.Cells[4].Value.ToString());
             
+            txtMaMuonSach.Enabled = false;
             txtMaSach.Enabled = false;
             txtMaDocGia.Enabled = false;
         }
@@ -122,7 +123,7 @@ namespace LibManagement
                 cmd.Parameters.AddWithValue("@MaDocGia", txtMaDocGia.Text);
                 cmd.Parameters.AddWithValue("@MaSach", txtMaSach.Text);
                 cmd.Parameters.AddWithValue("@NgayMuon", dtpNgayMuon.Value);
-                cmd.Parameters.AddWithValue("@NgayTra", dtpNgayTra.Value);
+                cmd.Parameters.AddWithValue("@NgayTra", dtpHanTra.Value);
                 cmd.ExecuteNonQuery();
 
                 loadData();
@@ -159,7 +160,25 @@ namespace LibManagement
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            //Edit NgayMuon and NgayTra to database
+            try
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = "UPDATE MUONSACH SET NgayMuon = @NgayMuon, HanTra = @NgayTra WHERE MaMuonSach = @MaPhieu";
+                cmd.Parameters.AddWithValue("@MaPhieu", txtMaMuonSach.Text);
+                cmd.Parameters.AddWithValue("@NgayMuon", dtpNgayMuon.Value);
+                cmd.Parameters.AddWithValue("@NgayTra", dtpHanTra.Value);
+                cmd.ExecuteNonQuery();
 
+                loadData();
+                MessageBox.Show("Sửa phiếu mượn thành công");
+                Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sửa phiếu mượn không thành công");
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)

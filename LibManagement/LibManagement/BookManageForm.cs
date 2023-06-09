@@ -18,7 +18,6 @@ namespace LibManagement
         //connect to database
         SqlConnection conn;
         SqlCommand cmd;
-        string connectionString = "Data Source=VU-NGUYEN;Initial Catalog=QUANLYTHUVIEN;Integrated Security=True";
         SqlDataAdapter adapter;
         DataTable dt = new DataTable();
 
@@ -131,7 +130,7 @@ namespace LibManagement
         private void BookManageForm_Load(object sender, EventArgs e)
         {
             //Connect to database and load data to datagridview
-            conn = new SqlConnection(connectionString);
+            conn = new SqlConnection(connString.connectionString);
             conn.Open();
             loadData();
 
@@ -282,6 +281,14 @@ namespace LibManagement
         private void btnClr_Click(object sender, EventArgs e)
         {
             ClearTextBox();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            //Go back to the main form
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
         }
     }
 }

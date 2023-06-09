@@ -52,17 +52,18 @@
     <Compile Include="BookManageForm.Designer.cs">
       <DependentUpon>BookManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="connString.cs" />
     <Compile Include="FindTicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FindTicketForm.Designer.cs">
       <DependentUpon>FindTicketForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TicketManageForm.cs">
+    <Compile Include="LendingBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TicketManageForm.Designer.cs">
-      <DependentUpon>TicketManageForm.cs</DependentUpon>
+    <Compile Include="LendingBookForm.Designer.cs">
+      <DependentUpon>LendingBookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FineManageForm.cs">
       <SubType>Form</SubType>
@@ -110,14 +111,20 @@
     <Compile Include="ReaderManageForm.Designer.cs">
       <DependentUpon>ReaderManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReturnBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnBookForm.Designer.cs">
+      <DependentUpon>ReturnBookForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BookManageForm.resx">
       <DependentUpon>BookManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindTicketForm.resx">
       <DependentUpon>FindTicketForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TicketManageForm.resx">
-      <DependentUpon>TicketManageForm.cs</DependentUpon>
+    <EmbeddedResource Include="LendingBookForm.resx">
+      <DependentUpon>LendingBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FineManageForm.resx">
       <DependentUpon>FineManageForm.cs</DependentUpon>
@@ -136,6 +143,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="FindBookForm.resx">
       <DependentUpon>FindBookForm.cs</DependentUpon>
@@ -145,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReaderManageForm.resx">
       <DependentUpon>ReaderManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnBookForm.resx">
+      <DependentUpon>ReturnBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -169,6 +180,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1Them.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2Sua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3Xoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agt_update_product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-exit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pay-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_simpline_27_2305630.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\librarian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picthuvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scientific-literature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

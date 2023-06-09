@@ -16,7 +16,6 @@ namespace LibManagement
         //connect to database
         SqlConnection conn;
         SqlCommand cmd;
-        string connectionString = "Data Source=VU-NGUYEN;Initial Catalog=QUANLYTHUVIEN;Integrated Security=True";
         SqlDataAdapter adapter;
         DataTable dt = new DataTable();
 
@@ -45,7 +44,7 @@ namespace LibManagement
         private void FindBookForm_Load(object sender, EventArgs e)
         {
             //connect to database
-            conn = new SqlConnection(connectionString);
+            conn = new SqlConnection(connString.connectionString);
             conn.Open();
             loadData();
 
@@ -78,7 +77,7 @@ namespace LibManagement
         private void btnFind_Click(object sender, EventArgs e)
         {
             //Using the option in combobox to find the book
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connString.connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
