@@ -16,6 +16,10 @@ CREATE TABLE LOGIN(
 	Password varchar(50) not null,
 );
 
+SELECT * FROM LOGIN;
+
+DELETE FROM LOGIN;
+
 CREATE TABLE DOCGIA (
 	MaDocGia int identity(1,1) primary key,
 	HoTen nvarchar(50) not null,
@@ -26,8 +30,8 @@ CREATE TABLE DOCGIA (
 	Email varchar(50),
 	NgayLapThe date not null,
 	NgayHetHan date not null,
-	TongPhat money not null default 0,
-	TienNo money not null default 0,
+	TongPhat int not null default 0,
+	TienNo int not null default 0,
 	constraint chk_GioiTinh check (GioiTinh in (N'Nam', N'Nữ', N'Khác')),
 	constraint chk_NgaySinh check (year(NgaySinh) > 1900),
 	constraint chk_CMND check (len(CMND) = 9 or len(CMND) = 12),
@@ -45,7 +49,7 @@ CREATE TABLE SACH (
 	NhaXB nvarchar(50) not null,
 	NgonNgu nvarchar(20) not null,
 	SoLuong int not null,
-	TriGia money not null,
+	TriGia int not null,
 	constraint chk_NamXB check (NamXB > 1900 and NamXB <= year(getdate())),
 	constraint chk_SoLuong check (SoLuong >= 0),
 	constraint chk_TriGia check (TriGia > 0)
@@ -64,7 +68,7 @@ CREATE TABLE MUONSACH (
 CREATE TABLE TRASACH (
 	MaMuonSach int primary key,
 	NgayTra date not null,
-	TienPhat money not null default 0,
+	TienPhat int not null default 0,
 	foreign key (MaMuonSach) references MUONSACH(MaMuonSach),
 	constraint chk_NgayTra check (NgayTra <= cast(getdate() as date)),
 	constraint chk_TienPhat check (TienPhat >= 0)
@@ -74,7 +78,7 @@ CREATE TABLE THUTIEN (
 	MaThuTien int identity(1,1) primary key,
 	MaDocGia int not null foreign key references DOCGIA(MaDocGia),
 	NgayThu date not null,
-	TienThu money not null,
+	TienThu int not null,
 	constraint chk_NgayThu check (NgayThu <= cast(getdate() as date)),
 	constraint chk_TienThu check (TienThu > 0)
 );
