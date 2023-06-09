@@ -1,12 +1,20 @@
 ﻿CREATE DATABASE QUANLYTHUVIEN;
 GO
 
+SELECT * FROM TRASACH
 
 USE QUANLYTHUVIEN;
 GO
 
 SET DATEFORMAT DMY;
 GO
+
+
+CREATE TABLE LOGIN(
+	AccID int identity(1, 1) primary key,
+	Username varchar(50) not null,
+	Password varchar(50) not null,
+);
 
 CREATE TABLE DOCGIA (
 	MaDocGia int identity(1,1) primary key,
