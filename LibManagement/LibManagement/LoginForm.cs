@@ -87,6 +87,9 @@ namespace LibManagement
                     cmd.Parameters.AddWithValue("@Pass", txtPass2.Text);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Đăng kí thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
+                    this.Hide();
                 }
             }
 
@@ -111,6 +114,7 @@ namespace LibManagement
                 if (dt.Rows.Count > 0)
                 {
                     //Close this form and open the main form
+                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MainForm mainForm = new MainForm();
                     mainForm.Show();
                     this.Hide();
