@@ -87,3 +87,7 @@ C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.csproj.CopyComplete
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Debug\LibManagement.exe.manifest
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Debug\LibManagement.application
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.exe.manifest
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Debug\LibManagement.application
