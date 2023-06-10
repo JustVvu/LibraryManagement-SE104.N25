@@ -8,18 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LibManagement
 {
-    //connect to the database
-    
-
     public partial class LoginForm : Form
     {
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataAdapter adapter;
         DataTable dt = new DataTable();
+
         public LoginForm()
         {
             InitializeComponent();

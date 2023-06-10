@@ -170,6 +170,7 @@
             this.Text = "Tra cứu Độc giả";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindReaderForm_FormClosed);
             this.Load += new System.EventHandler(this.TimDocGiaForm_Load);
+            this.SizeChanged += new System.EventHandler(this.FindReaderForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFindReader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYTHUVIENDataSetBindingSource)).EndInit();

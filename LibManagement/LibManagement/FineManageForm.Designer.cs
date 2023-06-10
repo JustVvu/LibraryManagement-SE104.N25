@@ -279,9 +279,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FineManageForm";
-            this.Text = "Thu tiền phạt";
+            this.Text = "Phiếu thu tiền";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FineManageForm_FormClosed);
             this.Load += new System.EventHandler(this.FineManageForm_Load);
             this.SizeChanged += new System.EventHandler(this.FineManageForm_SizeChanged);

@@ -16,7 +16,7 @@ CREATE TABLE LOGIN(
 	Password varchar(50) not null,
 );
 
-SELECT * FROM LOGIN;
+SELECT * FROM DOCGIA;
 
 DELETE FROM LOGIN;
 
@@ -50,6 +50,7 @@ CREATE TABLE SACH (
 	NgonNgu nvarchar(20) not null,
 	SoLuong int not null,
 	TriGia int not null,
+	TheLoai nvarchar(50) not null,
 	constraint chk_NamXB check (NamXB > 1900 and NamXB <= year(getdate())),
 	constraint chk_SoLuong check (SoLuong >= 0),
 	constraint chk_TriGia check (TriGia > 0)
@@ -288,59 +289,3 @@ BEGIN
 	on dg.MaDocGia = x.MaDocGia
 END;
 GO
-
-
-
-insert into DOCGIA (HoTen, GioiTinh, NgaySinh, CMND, SDT, NgayLapThe, NgayHetHan)
-values ('ten', 'Nam', cast('1/1/2000' as date), '123456789', 'dt', cast('1/1/2014' as date), cast(getdate() as date));
-
-select * from DOCGIA;
-
-insert into SACH (TenSach, TacGia, NamXB, NhaXB, NgonNgu, SoLuong, TriGia)
-values ('ten', 'tg', 2000, 'xb', N'Việt', 3, 20000);
-
-select * from SACH;
-
-insert into MUONSACH (MaDocGia, MaSach, NgayMuon, HanTra) values
-(1, 1, cast('1/1/2015' as date), cast('1/6/2023' as date)),
-(1, 1, cast('1/1/2015' as date), cast('1/6/2023' as date)),
-(1, 1, cast('1/1/2015' as date), cast('1/6/2023' as date));
-
-select * from MUONSACH;
-select * from SACH;
-
-insert into TRASACH (MaMuonSach, NgayTra) values
-(1, cast(getdate() as date)),
-(2, cast(getdate() as date)),
-(3, cast(getdate() as date));
-
-select * from TRASACH;
-select * from SACH;
-select * from DOCGIA
-
-insert into THUTIEN (MaDocGia, NgayThu, TienThu) values
-(1, cast(getdate() as date), 2000);
-
-select * from THUTIEN;
-select * from DOCGIA;
-
-
-
-delete from THUTIEN;
-select * from THUTIEN
-select * from DOCGIA;
-
-delete from TRASACH;
-select * from TRASACH;
-select * from SACH;
-select * from DOCGIA;
-
-delete from MUONSACH;
-select * from MUONSACH;
-select * from SACH;
-
-delete from SACH;
-select * from SACH;
-
-delete from DOCGIA;
-select * from DOCGIA;

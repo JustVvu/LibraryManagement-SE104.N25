@@ -71,3 +71,10 @@ C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Release\LibManagement.csproj.CopyComplete
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Release\LibManagement.exe
 C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Release\LibManagement.pdb
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Release\LibManagement.exe.manifest
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Release\LibManagement.application
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Release\LibManagement.exe.manifest
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Release\LibManagement.application
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Release\QUANLYTHUVIEN.mdf
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\bin\Release\QUANLYTHUVIEN_log.ldf
+C:\Users\Admin\Desktop\Học tập\Nhập môn CNPM\LibraryManagement-SE104.N25\LibManagement\LibManagement\obj\Release\LibManagement.ReportForm.resources

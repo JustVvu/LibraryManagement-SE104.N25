@@ -164,6 +164,7 @@
             this.Name = "FindTicketForm";
             this.Text = "Tra cứu phiếu mượn";
             this.Load += new System.EventHandler(this.FindTicket_Load);
+            this.SizeChanged += new System.EventHandler(this.FindTicketForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFindTicket)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

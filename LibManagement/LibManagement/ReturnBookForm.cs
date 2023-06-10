@@ -167,5 +167,10 @@ namespace LibManagement
             readerManageForm.Show();
             this.Hide();
         }
+
+        private void ReturnBookForm_SizeChanged(object sender, EventArgs e)
+        {
+            dgvTraSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }

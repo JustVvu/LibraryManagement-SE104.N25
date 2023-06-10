@@ -132,5 +132,10 @@ namespace LibManagement
                 }
             }
         }
+
+        private void FindReaderForm_SizeChanged(object sender, EventArgs e)
+        {
+            dgvFindReader.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }

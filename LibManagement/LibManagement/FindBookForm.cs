@@ -136,5 +136,10 @@ namespace LibManagement
             bookManageForm.Show();
             this.Hide();
         }
+
+        private void FindBookForm_SizeChanged(object sender, EventArgs e)
+        {
+            dgvBookFind.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }
