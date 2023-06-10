@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
-    <PublishUrlHistory>C:\Users\Admin\Desktop\Music\TestApp\|C:\Users\Admin\Desktop\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\Admin\Desktop\Test\|C:\Users\Admin\Desktop\|C:\Users\Admin\Desktop\Music\TestApp\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />
