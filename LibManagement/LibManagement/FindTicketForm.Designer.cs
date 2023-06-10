@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindTicketForm));
             this.label3 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
@@ -161,6 +162,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.cbxOption);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FindTicketForm";
             this.Text = "Tra cứu phiếu mượn";
             this.Load += new System.EventHandler(this.FindTicket_Load);
