@@ -88,5 +88,11 @@ namespace LibManagement
             this.Hide();
         }
 
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportForm ReportForm = new ReportForm();
+            ReportForm.Show();
+            this.Hide();
+        }
     }
 }

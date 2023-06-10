@@ -325,5 +325,6 @@ namespace LibManagement
             findReaderForm.Show();
             this.Hide();
         }
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LendingBookForm));
             this.quanlythuvienDataSet1 = new LibManagement.QUANLYTHUVIENDataSet();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnClear = new System.Windows.Forms.Button();
@@ -325,11 +326,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tabTraSach);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LendingBookForm";
             this.Text = "Quản lí mượn trả";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BorrowBookForm_FormClosed);
             this.Load += new System.EventHandler(this.BorrowBookForm_Load);
+            this.SizeChanged += new System.EventHandler(this.LendingBookForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.quanlythuvienDataSet1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

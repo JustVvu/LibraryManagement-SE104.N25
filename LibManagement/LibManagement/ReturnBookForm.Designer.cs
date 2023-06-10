@@ -360,6 +360,7 @@
             this.Name = "ReturnBookForm";
             this.Text = "Quản lí trả sách";
             this.Load += new System.EventHandler(this.ReturnBookForm_Load);
+            this.SizeChanged += new System.EventHandler(this.ReturnBookForm_SizeChanged);
             this.tabTraSach.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

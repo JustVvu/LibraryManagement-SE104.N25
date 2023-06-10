@@ -128,5 +128,10 @@ namespace LibManagement
             ticketManageForm.Show();
             this.Hide();
         }
+
+        private void FindTicketForm_SizeChanged(object sender, EventArgs e)
+        {
+            dgvFindTicket.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }

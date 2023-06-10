@@ -193,5 +193,10 @@ namespace LibManagement
             findTicketForm.Show();
             this.Hide();
         }
+
+        private void LendingBookForm_SizeChanged(object sender, EventArgs e)
+        {
+            dgvMuonSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }
