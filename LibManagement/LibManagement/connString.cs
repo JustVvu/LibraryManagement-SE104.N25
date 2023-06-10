@@ -10,8 +10,8 @@ namespace LibManagement
 {
     public static class connString
     {
-        //public static string connectionString { get; } = "Data Source=VU-NGUYEN;Initial Catalog = QUANLYTHUVIEN; Integrated Security = True;";
-        public static string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+        public static string connectionString { get; } = "Data Source=VU-NGUYEN;Initial Catalog = QUANLYTHUVIEN; Integrated Security = True;";
+        //public static string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
         //public static string connectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\QUANLYTHUVIEN.mdf;Integrated Security=True;User Instance=True";
 
     }
