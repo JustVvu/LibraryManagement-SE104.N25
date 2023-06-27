@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.IO;
 
 namespace LibManagement
 {
@@ -36,6 +37,17 @@ namespace LibManagement
         {
             conn = new SqlConnection(connString.connectionString);
             conn.Open();
+            string scriptFilePath = Path.Combine(Application.StartupPath, "database.sql");
+            try
+            {
+                string script = File.ReadAllText(scriptFilePath);
+                cmd = new SqlCommand(script, conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
         }
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {

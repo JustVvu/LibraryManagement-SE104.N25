@@ -327,6 +327,7 @@
   <ItemGroup>
     <None Include="Resources\background.JPG" />
     <None Include="Resources\account.png" />
+    <Content Include="database.sql" />
     <Content Include="QUANLYTHUVIEN.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
