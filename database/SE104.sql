@@ -1,8 +1,6 @@
 ﻿CREATE DATABASE QUANLYTHUVIEN;
 GO
 
-SELECT * FROM TRASACH
-
 USE QUANLYTHUVIEN;
 GO
 
@@ -15,8 +13,6 @@ CREATE TABLE LOGIN(
 	Username varchar(50) not null,
 	Password varchar(50) not null,
 );
-
-SELECT * FROM DOCGIA;
 
 DELETE FROM LOGIN;
 
