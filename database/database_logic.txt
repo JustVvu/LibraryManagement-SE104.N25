@@ -3,10 +3,7 @@
 	+ DOCGIA: tongphat, tienno.
 	+ TRASACH: tienphat.
 
-* Nguyên tắc: có độc giả mới có mượn, có mượn mới có trả, có nợ mới có thu. Dữ liệu liên quan tiền bạc ưu tiên bảo vệ hàng đầu.
 * Thứ tự insert: DOCGIA, SACH -> MUONSACH -> TRASACH -> THUTIEN. Khi xóa sẽ đi ngược quy trình này. Các trigger sẽ được liên kết chặt chẽ theo quy trình trên.
-
-* Constraint: rất dễ hiểu.
 
 * Trigger: tất cả trigger đều hỗ trợ cho các thao tác với nhiều hơn một dòng dữ liệu.
 - DOCGIA:
@@ -28,7 +25,7 @@
 	+ Thêm: Không cho phép thu nhiều hơn nợ; nếu thỏa thì tiền nợ của DOCGIA trừ đi một khoảng tương đương.
 	+ Xóa: tienno của DOCGIA tăng một khoảng tương đương.
 
-* Trong trương hợp SACH bị xóa, khóa ngoại có liên quan trong MUONSACH được set về null.
+* Trong trường hợp SACH bị xóa, khóa ngoại có liên quan trong MUONSACH được set về null.
 
 * Phân quyền người dùng thông thường (chưa triển khai):
 	+ DENY insert, update on DOCGIA.(MaDocGia, TongPhat, TienNo).
